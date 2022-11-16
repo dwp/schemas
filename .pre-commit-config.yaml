@@ -72,9 +72,13 @@ repos:
       hooks:
           - id: codespell
 
-    - repo: https://gitlab.com/adam-moss/pre-commit-hooks
-      rev: v1.1.0
+    - repo: https://gitlab.com/adam-moss/pre-commit-ssh-git-signing-key
+      rev: v1.0.0
       hooks:
-          - id: add-pre-commit-config-trailer
           - id: add-ssh-git-signing-key
           - id: remove-ssh-git-signing-key
+
+    - repo: https://gitlab.com/adam-moss/pre-commit-trailer
+      rev: v1.0.0
+      hooks:
+          - id: add-pre-commit-config-trailer
