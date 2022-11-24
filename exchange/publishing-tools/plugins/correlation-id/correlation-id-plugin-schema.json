@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://integration.dwp.gov.co.uk/plugins/correlation-id/correlation-id-plugin-schema.json",
+  "type": "string",
+  "minLength": 2,
+  "maxLength": 50,
+  "default": "trackingId",
+  "description": "Injects a header into a request. Useful for tracing request across tech stack."
+}

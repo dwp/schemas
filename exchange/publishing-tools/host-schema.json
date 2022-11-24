@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://integration.dwp.gov.co.uk/apigw/host.schema.json",
+  "title": "Host file schema",
+  "type": "array",
+  "properties": {
+    "non-prod": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "api.dev.exchange.dwp.gov.uk",
+          "api.test.exchange.dwp.gov.uk"
+        ]
+      }
+    },
+    "prod": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "api.stage.exchange.dwp.gov.uk",
+          "api.prod.exchange.dwp.gov.uk",
+          "api.exchange.dwp.gov.uk"
+        ]
+      }
+    }
+  },
+  "required": [
+    "non-prod",
+    "prod"
+  ]
+}

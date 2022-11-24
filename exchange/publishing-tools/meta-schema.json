@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://integration.dwp.gov.co.uk/apigw/meta.schema.json",
+  "title": "Meta file schema",
+  "type": "object",
+  "required": [
+    "workspace",
+    "product_name"
+  ],
+  "properties": {
+    "workspace": {
+      "$id": "#root/workspace",
+      "title": "Workspace",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 60,
+      "examples": [
+        "integration"
+      ],
+      "pattern": "^(?!-)[a-zA-Z0-9._-]*$"
+    },
+    "product_name": {
+      "$id": "#root/product_name",
+      "title": "Product name",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 60,
+      "examples": [
+        "NHS Charge Exemption"
+      ],
+      "pattern": "^.*$"
+    },
+    "authentication_proxy": {
+      "$id": "#root/authentication_proxy",
+      "title": "Authentication proxy",
+      "type": "boolean",
+      "examples": [
+        "true"
+      ]
+    }
+  }
+}

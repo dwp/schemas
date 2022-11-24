@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://integration.dwp.gov.co.uk/plugins/request-transformer/request-transformer-actions-schema.json",
+  "description": "Plugin to modify the request before forwarding to the backend",
+  "type": "object",
+  "anyOf": [
+    {
+      "required": [
+        "add"
+      ]
+    },
+    {
+      "required": [
+        "append"
+      ]
+    },
+    {
+      "required": [
+        "remove"
+      ]
+    },
+    {
+      "required": [
+        "rename"
+      ]
+    }
+  ],
+  "properties": {
+    "add": {
+      "type": "array",
+      "minLength": 1,
+      "items": [
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "append": {
+      "type": "array",
+      "minLength": 1,
+      "items": [
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "remove": {
+      "type": "array",
+      "minLength": 1,
+      "items": [
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "rename": {
+      "type": "array",
+      "minLength": 1,
+      "items": [
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "replace": {
+      "type": "array",
+      "minLength": 1,
+      "items": [
+        {
+          "type": "object"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://integration.dwp.gov.co.uk/plugins/oidc/oidc_apigw-plugin-schema.json",
+  "title": "OIDC API Gateway plugin schema",
+  "type": "object",
+  "properties": {
+    "discovery_endpoint": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(http|https)://[^ \"]+$",
+      "description": "The discovery endpoint on DTH or Azure AD"
+    },
+    "client_id": {
+      "type": "string",
+      "minLength": 2,
+      "pattern": "^{vault://.*}$",
+      "description": "Provided by ID&T during the initial onboarding"
+    },
+    "scopes_required": {
+      "type": "array",
+      "description": "The scopes required to be present in the access token",
+      "items": [
+        {
+          "type": "string",
+          "minLength": 2
+        }
+      ]
+    },
+    "issuers_allowed": {
+      "type": "array",
+      "description": "The issuers allowed to be present in the tokens",
+      "items": [
+        {
+          "type": "string",
+          "minLength": 2
+        }
+      ]
+    },
+    "cache_ttl": {
+      "type": "integer",
+      "default": 3600,
+      "minimum": 1000,
+      "description": "Time is expressed in milliseconds"
+    },
+    "cache_introspection": {
+      "type": "boolean",
+      "default": false
+    },
+    "display_errors": {
+      "type": "boolean",
+      "default": false
+    },
+    "ssl_verify": {
+      "type": "boolean",
+      "default": true
+    },
+    "timeout": {
+      "type": "integer",
+      "default": 10000,
+      "minimum": 1000,
+      "description": "Time is expressed in milliseconds"
+    },
+    "client_secret": {
+      "type": "string",
+      "description": "The client secret",
+      "minLength": 3,
+      "pattern": "^{vault://.*}$"
+    }
+  },
+  "required": [
+    "discovery_endpoint",
+    "scopes_required",
+    "issuers_allowed"
+  ]
+}

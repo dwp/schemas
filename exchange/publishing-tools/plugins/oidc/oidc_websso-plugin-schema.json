@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://integration.dwp.gov.co.uk/plugins/oidc/oidc_websso-plugin-schema.json",
+  "title": "OIDC Web SSO plugin schema",
+  "type": "object",
+  "properties": {
+    "discovery_endpoint": {
+      "type": "string",
+      "description": "The discovery endpoint on DTH or Azure AD",
+      "format": "uri",
+      "pattern": "^(http|https)://[^ \"]+$"
+    },
+    "client_id": {
+      "type": "string",
+      "description": "Provided by ID&T during the initial onboarding",
+      "minLength": 2,
+      "pattern": "^{vault://.*}$"
+    },
+    "session": {
+      "type": "object",
+      "properties": {
+        "redis": {
+          "type": "object",
+          "properties": {
+            "prefix": {
+              "type": "string"
+            },
+            "server_name": {
+              "type": "string"
+            },
+            "host": {
+              "type": "string"
+            },
+            "port": {
+              "type": "integer"
+            },
+            "ssl": {
+              "type": "boolean"
+            },
+            "ssl_verify": {
+              "type": "boolean"
+            },
+            "connect_timeout": {
+              "type": "integer"
+            },
+            "read_timeout": {
+              "type": "integer"
+            },
+            "send_timeout": {
+              "type": "integer"
+            }
+          },
+          "required": [
+          ]
+        }
+      },
+      "required": [
+        "redis"
+      ]
+    },
+    "client_secret": {
+      "type": "array",
+      "description": "The client secret",
+      "minLength": 3,
+      "pattern": "^{vault://.*}$"
+    }
+  },
+  "required": [
+    "discovery_endpoint"
+  ]
+}

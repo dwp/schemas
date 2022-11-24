@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://integration.dwp.gov.co.uk/route-schema.json",
+  "type": "object",
+  "required": [
+    "host",
+    "consumer_path",
+    "http_methods"
+  ],
+  "properties": {
+    "host": {
+      "type": "string",
+      "description": "The domain name that matches this Route"
+    },
+    "consumer_path": {
+      "type": "string",
+      "description": "The path that matches this Route",
+      "pattern": "^\/(.*)[^\/]*$"
+    },
+    "http_methods": {
+      "type": "string",
+      "description": "A list of HTTP methods that match this Route",
+      "pattern": "^((?:GET|POST|PUT|HEAD|DELETE|CONNECT|OPTIONS|PATCH|TRACE),?\\s?)+$"
+    },
+    "plugins": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "plugins/plugins-schema.json"
+      }
+    },
+    "protocols": {
+      "type": "array",
+      "description": "A list of the protocols this Route should allow",
+      "items": {
+        "type": "string",
+        "enum": [
+          "http",
+          "https"
+        ]
+      }
+    },
+    "strip_path": {
+      "type": "boolean",
+      "description": "When matching a Route via one of the paths, strip the matching prefix from the upstream request URL"
+    },
+    "path_handling": {
+      "type": "string",
+      "description": "Controls how the Service path, Route path and requested path are combined when sending a request to the upstream",
+      "enum": [
+        "v0",
+        "v1"
+      ]
+    },
+    "preserve_host": {
+      "type": "boolean",
+      "description": "When matching a Route via one of the hosts domain names, use the request Host header in the upstream request headers"
+    },
+    "https_redirect_status_code": {
+      "type": "integer",
+      "description": "The status code Kong responds with when all properties of a Route match except the protocol"
+    },
+    "regex_priority": {
+      "type": "integer",
+      "description": "A number used to choose which route resolves a given request when several routes match it using regexes simultaneously",
+      "minimum": 0
+    },
+    "request_buffering": {
+      "type": "boolean",
+      "description": "Whether to enable request body buffering or not"
+    },
+    "response_buffering": {
+      "type": "boolean",
+      "description": "Whether to enable response body buffering or not"
+    }
+  }
+}

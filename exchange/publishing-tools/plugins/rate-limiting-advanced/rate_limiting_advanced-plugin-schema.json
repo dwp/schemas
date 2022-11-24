@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://integration.dwp.gov.co.uk/plugins/rate-limiting-advanced/rate_limiting_advanced-plugin-schema.json",
+  "type": "object",
+  "description": "Rate limit how many HTTP requests can be made in a given period of seconds, minutes, hours, days, months, or years. If the underlying Service/Route (or deprecated API entity) has no authentication layer, the Client IP address will be used; otherwise, the Consumer will be used if an authentication plugin has been configured.",
+  "properties": {
+    "per_second": {
+      "type": "number",
+      "minimum": 1,
+      "description": "The number of HTTP requests that can be made per second"
+    },
+    "per_minute": {
+      "type": "number",
+      "minimum": 1,
+      "description": "The number of HTTP requests that can be made per minute"
+    },
+    "per_hour": {
+      "type": "number",
+      "minimum": 1,
+      "description": "The number of HTTP requests that can be made per hour"
+    },
+    "per_day": {
+      "type": "number",
+      "minimum": 1,
+      "description": "The number of HTTP requests that can be made per day"
+    },
+    "hide_client_headers": {
+      "type": "boolean",
+      "description": "Optionally hide informative response headers"
+    },
+    "redis": {
+      "type": "object",
+      "properties": {
+        "host": {
+          "type": "string",
+          "format": "uri"
+        },
+        "port": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 65535
+        },
+        "server_name": {
+          "type": "string"
+        },
+        "ssl": {
+          "type": "boolean"
+        },
+        "ssl_verify": {
+          "type": "boolean"
+        },
+        "connect_timeout": {
+          "type": "number",
+          "minimum": 1
+        },
+        "read_timeout": {
+          "type": "number",
+          "minimum": 1
+        },
+        "send_timeout": {
+          "type": "number",
+          "minimum": 1
+        },
+        "database": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "per_second"
+      ]
+    },
+    {
+      "required": [
+        "per_minute"
+      ]
+    },
+    {
+      "required": [
+        "per_hour"
+      ]
+    },
+    {
+      "required": [
+        "per_day"
+      ]
+    }
+  ]
+}

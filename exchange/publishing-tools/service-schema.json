@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://integration.dwp.gov.co.uk/service.schema.json",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "description": "The service name"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(https?|wss?|ftp)://",
+      "description": "The service base URL"
+    },
+    "timeout": {
+      "type": "object",
+      "properties": {
+        "secs": {
+          "exclusiveMinimum": 0,
+          "maximum": 900,
+          "default": 60
+        },
+        "retries": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10,
+          "default": 5
+        }
+      },
+      "required": [
+        "retries",
+        "secs"
+      ]
+    },
+    "tls_verify_upstream": {
+      "type": "boolean",
+      "default": true
+    },
+    "tls_verify_depth": {
+      "type": "integer",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 2
+    },
+    "additional_ca_certs": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "routes": {
+      "type": "array",
+      "items": [
+        {
+          "$ref": "route-schema.json"
+        }
+      ]
+    },
+    "plugins": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "plugins/plugins-schema.json"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "url",
+    "timeout"
+  ]
+}

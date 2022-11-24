@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://integration.dwp.gov.co.uk/plugins/plugins-schema.json",
+  "type": "object",
+  "properties": {
+    "oidc_websso": {
+      "$ref": "oidc/oidc_websso-plugin-schema.json"
+    },
+    "oidc_apigw": {
+      "$ref": "oidc/oidc_apigw-plugin-schema.json"
+    },
+    "rate_limiting": {
+      "$ref": "rate-limiting-advanced/rate_limiting_advanced-plugin-schema.json"
+    },
+    "correlationId": {
+      "$ref": "correlation-id/correlation-id-plugin-schema.json"
+    },
+    "request_transform_headers": {
+      "$ref": "request-transformer/request-transformer-actions-schema.json"
+    },
+    "request_transform_body": {
+      "$ref": "request-transformer/request-transformer-actions-schema.json"
+    },
+    "request_transform_querystring": {
+      "$ref": "request-transformer/request-transformer-actions-schema.json"
+    }
+  }
+}
