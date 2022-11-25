@@ -1,6 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://integration.dwp.gov.co.uk/plugins/rate-limiting-advanced/rate_limiting_advanced-plugin-schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://dwp.gov.uk/exchange/publishing-tools/plugins/rate-limiting-advanced/rate_limiting_advanced-plugin-schema.json",
   "type": "object",
   "description": "Rate limit how many HTTP requests can be made in a given period of seconds, minutes, hours, days, months, or years. If the underlying Service/Route (or deprecated API entity) has no authentication layer, the Client IP address will be used; otherwise, the Consumer will be used if an authentication plugin has been configured.",
   "properties": {

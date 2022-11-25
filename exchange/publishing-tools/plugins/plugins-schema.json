@@ -1,6 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://integration.dwp.gov.co.uk/plugins/plugins-schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://dwp.gov.uk/exchange/publishing-tools/plugins/plugins-schema.json",
   "type": "object",
   "properties": {
     "oidc_websso": {
@@ -23,6 +23,9 @@
     },
     "request_transform_querystring": {
       "$ref": "request-transformer/request-transformer-actions-schema.json"
+    },
+    "saml": {
+      "$ref": "saml/saml-schema.json"
     }
   }
 }

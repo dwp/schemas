@@ -1,6 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://integration.dwp.gov.co.uk/plugins/request-transformer/request-transformer-actions-schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://dwp.gov.uk/exchange/publishing-tools/plugins/request-transformer/request-transformer-actions-schema.json",
   "description": "Plugin to modify the request before forwarding to the backend",
   "type": "object",
   "anyOf": [

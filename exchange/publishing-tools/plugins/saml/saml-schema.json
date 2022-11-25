@@ -1,0 +1,165 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://dwp.gov.uk/exchange/publishing-tools/plugins/saml/saml-schema.json",
+  "type": "object",
+  "properties": {
+    "idpRedirectEndpoint": {
+      "type": "string",
+      "format": "uri",
+      "description": "The URL of the page the user will be redirected to by the plugin. Input varies based on the user."
+    },
+    "pathToListenOn": {
+      "type": "string",
+      "pattern": "^/(.*)[^/]*$",
+      "description": "The path that identity provider will post is relative to current API. Varies from user to user"
+    },
+    "customIssuer": {
+      "type": "string",
+      "format": "uri",
+      "description": "Provides information which is sent to the SAML IDP and which the IDP may take action on."
+    },
+    "authenticationRequestVerb": {
+      "type": "string",
+      "pattern": "^((?:GET|POST|PUT|HEAD|DELETE|CONNECT|OPTIONS|PATCH|TRACE),?\\s?)+$",
+      "default": "POST",
+      "description": "The HTTP verb that the Authentication request redirection form will be sent with."
+    },
+    "userIdAttributeName": {
+      "type": "string",
+      "format": "uri",
+      "description": "Enables find user in the SAML response attribute statement and always differs between SAML plugin users"
+    },
+    "usernameAttributeName": {
+      "type": "string",
+      "format": "uri",
+      "description": "Acts in place of the default username attribute"
+    },
+    "rolesAttributeName": {
+      "type": "string",
+      "format": "uri",
+      "description": "Acts in place of the default roles attribute"
+    },
+    "authIndex": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 7,
+      "default": 1,
+      "description": "Determines which authentication request is sent"
+    },
+    "customAuthnRequestXML": {
+      "type": "string",
+      "description": "Custom XML to send to the IDP. Must be valid against https://tinyurl.com/atv7c8n"
+    },
+    "expectedIpPublicKey": {
+      "type": "string",
+      "pattern": "^/(.*)[^/]*$",
+      "description": "A path to X509 certificate file in PEM format which contains a public key which matches the X509 certificate/key returned by Identify Provider(e.g ADFS)."
+    },
+    "disableSignatureValidation": {
+      "type": "boolean",
+      "default": false,
+      "description": "Disable validation of the signature."
+    },
+    "signatureCountInResponse": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2,
+      "default": 1,
+      "description": "EAS SAML responses contain 2 signatures and ADFS/AZURE AD SAML responses contain one signature."
+    },
+    "easCustomIssuer": {
+      "type": "string",
+      "format": "uri",
+      "description": "The issuer value in the EAS authentication request."
+    },
+    "easAssertionConsumerUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "The assertion consumer url in the EAS authentication request"
+    },
+    "HMACSecret": {
+      "type": "string",
+      "maxLength": 8,
+      "description": "A secret string for using in conjunction with private key for generating the HMAC signature in the JWT"
+    },
+    "RSACertificate": {
+      "type": "string",
+      "pattern": "^/(.*)[^/]*$",
+      "description": "Validates the signature in JWT token"
+    },
+    "RSAPrivateKey": {
+      "type": "string",
+      "pattern": "^/(.*)[^/]*$",
+      "description": "Used for encrypting the JWT payload"
+    },
+    "allowNoSigning": {
+      "type": "boolean",
+      "default": false,
+      "description": "Allow tokens that use an algorithm of NONE."
+    },
+    "encrypt": {
+      "type": "boolean",
+      "default": true,
+      "description": "An encrypted token (JWE) when returning a token to the caller."
+    },
+    "denyTokenlessSubmission": {
+      "type": "boolean",
+      "default": true,
+      "description": "Prevent data from being posted (POST/PUT) through the Gateway without a token"
+    },
+    "tokenTTL": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 20000,
+      "description": "Number of seconds before the token (and cookie) time-out"
+    },
+    "authTTL": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 20000,
+      "description": "Number of seconds before the authentication session times-out"
+    }
+  },
+  "required": [
+    "idpRedirectEndpoint",
+    "pathToListenOn",
+    "customIssuer",
+    "userIdAttributeName",
+    "usernameAttributeName",
+    "rolesAttributeName",
+    "expectedIpPublicKey",
+    "HMACSecret",
+    "RSACertificate",
+    "RSAPrivateKey"
+  ],
+  "allOf": [{
+    "if": {
+      "properties": {
+        "signatureCountInResponse": {
+          "const": 2
+        }
+      }
+    },
+    "then": {
+      "required": [
+        "easCustomIssuer",
+        "easAssertionConsumerUrl"
+      ]
+    }
+  },
+    {
+      "if": {
+        "properties": {
+          "authIndex":{
+            "const": 6
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "customAuthnRequestXML"
+        ]
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://integration.dwp.gov.co.uk/apigw/meta.schema.json",
+  "$id": "https://dwp.gov.uk/exchange/publishing-tools/apigw/meta-schema.json",
   "title": "Meta file schema",
   "type": "object",
   "required": [
