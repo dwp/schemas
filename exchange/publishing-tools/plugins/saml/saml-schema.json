@@ -132,25 +132,26 @@
     "RSACertificate",
     "RSAPrivateKey"
   ],
-  "allOf": [{
-    "if": {
-      "properties": {
-        "signatureCountInResponse": {
-          "const": 2
-        }
-      }
-    },
-    "then": {
-      "required": [
-        "easCustomIssuer",
-        "easAssertionConsumerUrl"
-      ]
-    }
-  },
-    {
+  "dependencies": {
+    "signatureCountInResponse": {
       "if": {
         "properties": {
-          "authIndex":{
+          "signatureCountInResponse": {
+            "const": 2
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "easCustomIssuer",
+          "easAssertionConsumerUrl"
+        ]
+      }
+    },
+    "authIndex": {
+      "if": {
+        "properties": {
+          "authIndex": {
             "const": 6
           }
         }
@@ -161,5 +162,5 @@
         ]
       }
     }
-  ]
+  }
 }
