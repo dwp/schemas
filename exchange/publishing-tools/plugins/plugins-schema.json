@@ -26,6 +26,10 @@
     },
     "saml": {
       "$ref": "saml/saml-schema.json"
+    },
+    "kongfig": {
+      "type": "object"
     }
-  }
+  },
+  "additionalProperties": false
 }

@@ -23,6 +23,11 @@
       "required": [
         "rename"
       ]
+    },
+    {
+      "required": [
+        "replace"
+      ]
     }
   ],
   "properties": {
@@ -76,5 +81,6 @@
         }
       ]
     }
-  }
+  },
+  "additionalProperties": false
 }

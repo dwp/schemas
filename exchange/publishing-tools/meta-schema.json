@@ -38,5 +38,6 @@
         "true"
       ]
     }
-  }
+  },
+  "additionalProperties": false
 }

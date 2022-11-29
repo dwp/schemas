@@ -29,6 +29,7 @@
           "default": 5
         }
       },
+      "additionalProperties": false,
       "required": [
         "retries",
         "secs"
@@ -68,6 +69,7 @@
       }
     }
   },
+  "additionalProperties": false,
   "required": [
     "name",
     "url",

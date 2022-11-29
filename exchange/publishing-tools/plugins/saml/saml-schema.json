@@ -120,6 +120,7 @@
       "description": "Number of seconds before the authentication session times-out"
     }
   },
+  "additionalProperties": false,
   "required": [
     "idpRedirectEndpoint",
     "pathToListenOn",

@@ -73,5 +73,6 @@
       "type": "boolean",
       "description": "Whether to enable response body buffering or not"
     }
-  }
+  },
+  "additionalProperties": false
 }

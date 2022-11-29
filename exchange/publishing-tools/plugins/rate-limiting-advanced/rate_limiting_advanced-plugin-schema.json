@@ -64,9 +64,11 @@
         "database": {
           "type": "number"
         }
-      }
+      },
+      "additionalProperties": false
     }
   },
+  "additionalProperties": false,
   "anyOf": [
     {
       "required": [

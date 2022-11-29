@@ -36,6 +36,7 @@
           "minLength": 2
         }
       },
+      "additionalProperties": false,
       "examples": [
         {
           "name": "Jo Doe",
@@ -54,9 +55,10 @@
         "oas_path": {
           "type": "string",
           "description": "Path to the technical documentation, relative to the current working directory.",
-          "pattern": "((?:[^\\/]*\\/)*)(?=\\.(yaml|yml|json))"
+          "pattern": "((?:[^\/]*\/)*)(?=\\.(yaml|yml|json))"
         }
       },
+      "additionalProperties": false,
       "examples": [
         {
           "oas_path": "../oas/pet-store.yaml"
@@ -234,6 +236,7 @@
           ]
         }
       },
+      "additionalProperties": false,
       "examples": [
         {
           "asset_type": "REST API",
@@ -267,6 +270,7 @@
       }
     }
   },
+  "additionalProperties": false,
   "examples": [
     {
       "description": "This is an example service",

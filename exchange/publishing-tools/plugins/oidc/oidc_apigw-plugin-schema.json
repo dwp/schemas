@@ -67,6 +67,7 @@
       "pattern": "^{vault://.*}$"
     }
   },
+  "additionalProperties": false,
   "required": [
     "discovery_endpoint",
     "scopes_required",
