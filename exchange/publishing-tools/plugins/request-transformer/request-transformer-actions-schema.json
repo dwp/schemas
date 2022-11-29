@@ -31,7 +31,8 @@
       "minLength": 1,
       "items": [
         {
-          "type": "object"
+          "type": "string",
+          "format": "^([a-z]+[-|_|:]?[a-z]+)+$"
         }
       ]
     },
@@ -40,7 +41,8 @@
       "minLength": 1,
       "items": [
         {
-          "type": "object"
+          "type": "string",
+          "format": "^([a-z]+[-|_|:]?[a-z]+)+$"
         }
       ]
     },
@@ -49,7 +51,8 @@
       "minLength": 1,
       "items": [
         {
-          "type": "object"
+          "type": "string",
+          "format": "^([a-z]+[-|_|:]?[a-z]+)+$"
         }
       ]
     },
@@ -58,7 +61,8 @@
       "minLength": 1,
       "items": [
         {
-          "type": "object"
+          "type": "string",
+          "format": "^([a-z]+[-|_|:]?[a-z]+)+$"
         }
       ]
     },
@@ -67,7 +71,8 @@
       "minLength": 1,
       "items": [
         {
-          "type": "object"
+          "type": "string",
+          "format": "^([a-z]+[-|_|:]?[a-z]+)+$"
         }
       ]
     }
