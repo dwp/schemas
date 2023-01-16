@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://dwp.gov.uk/exchange/publishing-tools/route-schema.json",
   "type": "object",
+  "title": "Route",
   "required": [
     "host",
     "consumer_path",
@@ -23,6 +24,7 @@
       "pattern": "^((?:GET|POST|PUT|HEAD|DELETE|CONNECT|OPTIONS|PATCH|TRACE),?\\s?)+$"
     },
     "plugins": {
+      "title": "Plugins",
       "type": "array",
       "uniqueItems": true,
       "items": {
@@ -30,6 +32,7 @@
       }
     },
     "protocols": {
+      "title": "Protocols",
       "type": "array",
       "description": "A list of the protocols this Route should allow",
       "items": {

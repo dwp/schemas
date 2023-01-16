@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://dwp.gov.uk/exchange/publishing-tools/plugins/correlation-id/correlation-id-plugin-schema.json",
   "type": "string",
+  "title": "Correlation ID plugin",
   "minLength": 2,
   "maxLength": 50,
   "default": "trackingId",

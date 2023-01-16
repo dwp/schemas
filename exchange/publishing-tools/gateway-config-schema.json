@@ -1,9 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://dwp.gov.uk/exchange/publishing-tools/gateway-config-schema.json",
+  "title": "Gateway configuration",
   "type": "object",
   "properties": {
     "services": {
+      "title": "Services",
       "type": "array",
       "items": {
         "$ref": "./service-schema.json"

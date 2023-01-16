@@ -1,10 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://dwp.gov.uk/exchange/publishing-tools/apigw/host-schema.json",
-  "title": "Host file schema",
+  "title": "Host",
   "type": "array",
   "properties": {
     "non-prod": {
+      "title": "Non production hosts",
       "type": "array",
       "items": {
         "type": "string",
@@ -15,6 +16,7 @@
       }
     },
     "prod": {
+      "title": "Production hosts",
       "type": "array",
       "items": {
         "type": "string",

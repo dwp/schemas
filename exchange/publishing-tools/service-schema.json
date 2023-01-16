@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://dwp.gov.uk/exchange/publishing-tools/service-schema.json",
   "type": "object",
+  "title": "Service",
   "properties": {
     "name": {
       "type": "string",
@@ -15,6 +16,7 @@
       "description": "The service base URL with format `protocol://host:port.\nIf a port is not supplied, the default port for the given protocol is used."
     },
     "timeout": {
+      "title": "Timeout",
       "type": "object",
       "properties": {
         "secs": {
@@ -46,6 +48,7 @@
       "maximum": 2
     },
     "additional_ca_certs": {
+      "title": "Additional certificates",
       "type": "array",
       "items": [
         {
@@ -54,6 +57,7 @@
       ]
     },
     "routes": {
+      "title": "Routes",
       "type": "array",
       "items": [
         {
@@ -62,6 +66,7 @@
       ]
     },
     "plugins": {
+      "title": "Plugins",
       "type": "array",
       "uniqueItems": true,
       "items": {

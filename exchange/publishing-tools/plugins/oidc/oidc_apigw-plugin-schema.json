@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://dwp.gov.uk/exchange/publishing-tools/plugins/oidc/oidc_apigw-plugin-schema.json",
-  "title": "OIDC API Gateway plugin schema",
   "type": "object",
+  "title": "OIDC API Gateway plugin",
   "properties": {
     "discovery_endpoint": {
       "type": "string",
@@ -17,6 +17,7 @@
       "description": "Provided by ID&T during the initial onboarding"
     },
     "scopes_required": {
+      "title": "Scopes required",
       "type": "array",
       "description": "The scopes required to be present in the access token",
       "items": [
@@ -27,6 +28,7 @@
       ]
     },
     "issuers_allowed": {
+      "title": "Issuers allowed",
       "type": "array",
       "description": "The issuers allowed to be present in the tokens",
       "items": [

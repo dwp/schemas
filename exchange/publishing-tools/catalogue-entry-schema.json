@@ -1,6 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://dwp.gov.uk/exchange/publishing-tools/apigw/catalogue-entry-schema.json",
+  "title": "Catalogue entry",
   "type": "object",
   "required": [
     "description",
@@ -16,6 +17,7 @@
     },
     "primaryContact": {
       "type": "object",
+      "title": "Primary contact",
       "description": "Contact details for the owner of the asset, i.e. the Product Owner.These details will be used when customers make enquiries or request access to the asset through the portal.",
       "required": [
         "emailAddress"
@@ -47,6 +49,7 @@
     },
     "technical_documentation": {
       "type": "object",
+      "title": "Technical documentation",
       "description": "Allows you to provide paths to technical documentation to be published to the portal.",
       "required": [
         "oas_path"
@@ -66,6 +69,7 @@
       ]
     },
     "filters": {
+      "title": "Filters",
       "type": "object",
       "description": "A list of filtering options to improve searchability on the portal. Please check the README file to check the valid combinations of `lifecycle`, `profile`, and `access`.",
       "required": [
@@ -167,6 +171,7 @@
           ]
         },
         "categories": {
+          "title": "Categories",
           "type": "array",
           "minLength": 1,
           "maxLength": 3,
@@ -260,6 +265,7 @@
       ]
     },
     "relatedAssets": {
+      "title": "Related assets",
       "description": "A list of other assets that are related to the asset being published. Must match the Asset ID on the related asset's business documentation page on the portal at https://gitlab.com/dwp/integration/api-exchange/exchange-content/-/tree/main/output/dwp/portal/workspaces/primary/content/_catalogueEntries.",
       "type": "array",
       "items": {

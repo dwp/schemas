@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://dwp.gov.uk/exchange/publishing-tools/plugins/saml/saml-schema.json",
   "type": "object",
+  "title": "SAML plugin",
   "properties": {
     "idpRedirectEndpoint": {
       "type": "string",

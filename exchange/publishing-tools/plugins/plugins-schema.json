@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://dwp.gov.uk/exchange/publishing-tools/plugins/plugins-schema.json",
   "type": "object",
+  "title": "Plugins",
   "properties": {
     "oidc_websso": {
       "$ref": "oidc/oidc_websso-plugin-schema.json"
@@ -28,6 +29,7 @@
       "$ref": "saml/saml-schema.json"
     },
     "kongfig": {
+      "title": "Kong configuration",
       "type": "object"
     }
   },
