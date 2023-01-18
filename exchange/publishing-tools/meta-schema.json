@@ -3,10 +3,6 @@
   "$id": "https://dwp.gov.uk/exchange/publishing-tools/apigw/meta-schema.json",
   "title": "Meta",
   "type": "object",
-  "required": [
-    "workspace",
-    "product_name"
-  ],
   "properties": {
     "workspace": {
       "$id": "#root/workspace",
@@ -37,7 +33,63 @@
       "examples": [
         "true"
       ]
+    },
+    "workspace_gitlab_groups": {
+      "$id": "#root/workspace_gitlab_groups",
+      "title": "GitLab groups for workspace",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "@dwp/team-name"
+        ]
+      }
+    },
+    "product_gitlab_groups": {
+      "$id": "#root/product_gitlab_groups",
+      "title": "GitLab groups for product name",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "@dwp/team-name"
+        ]
+      }
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "anyOf": [
+    {
+      "anyOf": [
+        {
+          "required": [
+            "workspace",
+            "workspace_gitlab_groups"
+          ]
+        },
+        {
+          "required": [
+            "workspace",
+            "product_name",
+            "product_gitlab_groups"
+          ]
+        },
+        {
+          "required": [
+            "workspace",
+            "product_name",
+            "product_gitlab_groups",
+            "workspace_gitlab_groups"
+          ]
+        }
+      ]
+
+    },
+    {
+      "required": [
+      "workspace",
+      "product_name"
+      ]
+    }
+  ]
 }
