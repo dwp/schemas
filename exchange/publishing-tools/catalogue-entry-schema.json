@@ -72,24 +72,43 @@
       "title": "Filters",
       "type": "object",
       "description": "A list of filtering options to improve searchability on the portal. Please check the README file to check the valid combinations of `lifecycle`, `profile`, and `access`.",
-      "required": [
-        "asset_type",
-        "owner",
-        "categories",
-        "visibility",
-        "lifecycle",
-        "profile",
-        "access"
+      "oneOf": [
+        {
+          "required": [
+            "asset_type",
+            "owner",
+            "categories",
+            "visibility",
+            "lifecycle",
+            "profile",
+            "access"
+          ]
+        },
+        {
+          "required": [
+            "Asset",
+            "Owner",
+            "Category",
+            "Visibility",
+            "Lifecycle",
+            "Profile",
+            "Access"
+          ]
+        }
       ],
       "allOf": [
-        {"$ref": "#/properties/filters/definitions/active-lifecycle"},
-        {"$ref": "#/properties/filters/definitions/deprecated-lifecycle"}
+        {
+          "$ref": "#/properties/filters/definitions/active-lifecycle"
+        },
+        {
+          "$ref": "#/properties/filters/definitions/deprecated-lifecycle"
+        }
       ],
       "definitions": {
         "active-lifecycle": {
           "if": {
-            "properties": {
-              "lifecycle": {
+            "patternProperties": {
+              "[l|L]ifecycle$": {
                 "enum": [
                   "In Development",
                   "Pre-Prod",
@@ -99,14 +118,14 @@
             }
           },
           "then": {
-            "properties": {
-              "profile": {
+            "patternProperties": {
+              "[p|P]rofile$": {
                 "enum": [
                   "Strategic",
                   "Transitional"
                 ]
               },
-              "access": {
+              "[a|A]ccess$": {
                 "enum": [
                   "Open",
                   "Closed"
@@ -117,8 +136,8 @@
         },
         "deprecated-lifecycle": {
           "if": {
-            "properties": {
-              "lifecycle": {
+            "patternProperties": {
+              "[l|L]ifecycle$": {
                 "enum": [
                   "Deprecated",
                   "Removed"
@@ -127,19 +146,19 @@
             }
           },
           "then": {
-            "properties": {
-              "profile": {
+            "patternProperties": {
+              "[p|P]rofile$": {
                 "const": "Legacy"
               },
-              "access": {
+              "[a|A]ccess$": {
                 "const": "Closed"
               }
             }
           }
         }
       },
-      "properties": {
-        "asset_type": {
+      "patternProperties": {
+        "[a|A]sset(_type)?$": {
           "type": "string",
           "enum": [
             "REST API",
@@ -151,7 +170,7 @@
             "REST API"
           ]
         },
-        "owner": {
+        "[o|O]wner$": {
           "type": "string",
           "enum": [
             "AME Payments",
@@ -170,7 +189,7 @@
             "Integration"
           ]
         },
-        "categories": {
+        "[c|C]ategor(y|ies)$": {
           "title": "Categories",
           "type": "array",
           "minLength": 1,
@@ -195,7 +214,7 @@
             ]
           ]
         },
-        "visibility": {
+        "[v|V]isibility$": {
           "type": "string",
           "enum": [
             "Internal",
@@ -205,7 +224,7 @@
             "Internal"
           ]
         },
-        "lifecycle": {
+        "[l|L]ifecycle$": {
           "type": "string",
           "enum": [
             "In Development",
@@ -218,7 +237,7 @@
             "In Development"
           ]
         },
-        "profile": {
+        "[p|P]rofile$": {
           "type": "string",
           "title": "The profile Schema",
           "enum": [
@@ -230,7 +249,7 @@
             "Strategic"
           ]
         },
-        "access": {
+        "[a|A]ccess$": {
           "type": "string",
           "enum": [
             "Open",
