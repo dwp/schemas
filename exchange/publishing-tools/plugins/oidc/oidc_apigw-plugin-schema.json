@@ -13,8 +13,8 @@
     "client_id": {
       "type": "string",
       "minLength": 2,
-      "pattern": "^{vault://.*}$",
-      "description": "Provided by ID&T during the initial onboarding"
+      "pattern": "^{vault:\/\/env\/[\\w|-]+\/?[\\w|-]+}$",
+      "description": "Reference to the client id env var in the gateway, refer to gateway module for details"
     },
     "scopes_required": {
       "title": "Scopes required",
@@ -64,9 +64,9 @@
     },
     "client_secret": {
       "type": "string",
-      "description": "The client secret",
+      "description": "Reference to the client secret env var in the gateway, refer to gateway module for details",
       "minLength": 3,
-      "pattern": "^{vault://.*}$"
+      "pattern": "^{vault:\/\/env\/[\\w|-]+\/?[\\w|-]+}$"
     }
   },
   "additionalProperties": false,

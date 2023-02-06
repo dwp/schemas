@@ -12,9 +12,9 @@
     },
     "client_id": {
       "type": "string",
-      "description": "Provided by ID&T during the initial onboarding",
+      "description": "Reference to the client id env var in the gateway, refer to gateway module for details",
       "minLength": 2,
-      "pattern": "^{vault://.*}$"
+      "pattern": "^{vault:\/\/env\/[\\w|-]+\/?[\\w|-]+}$"
     },
     "session": {
       "title": "Session",
@@ -64,9 +64,9 @@
     "client_secret": {
       "title": "Client secrets",
       "type": "array",
-      "description": "The client secret",
+      "description": "Reference to the client secret env var in the gateway, refer to gateway module for details",
       "minLength": 3,
-      "pattern": "^{vault://.*}$"
+      "pattern": "^{vault:\/\/env\/[\\w|-]+\/?[\\w|-]+}$"
     }
   },
   "additionalProperties": false,
