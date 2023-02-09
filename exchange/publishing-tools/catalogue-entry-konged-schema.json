@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://dwp.gov.uk/exchange/publishing-tools/apigw/catalogue-entry-schema.json",
-  "title": "Catalogue entry",
+  "title": "Catalogue entry - Kong format",
   "type": "object",
   "required": [
     "description",
@@ -73,13 +73,13 @@
       "type": "object",
       "description": "A list of filtering options to improve searchability on the portal. Please check the README file to check the valid combinations of `lifecycle`, `profile`, and `access`.",
       "required": [
-        "asset_type",
-        "owner",
-        "categories",
-        "visibility",
-        "lifecycle",
-        "profile",
-        "access"
+        "Asset",
+        "Owner",
+        "Category",
+        "Visibility",
+        "Lifecycle",
+        "Profile",
+        "Access"
       ],
       "allOf": [
         {"$ref": "#/properties/filters/definitions/active-lifecycle"},
@@ -89,7 +89,7 @@
         "active-lifecycle": {
           "if": {
             "properties": {
-              "lifecycle": {
+              "Lifecycle": {
                 "enum": [
                   "In Development",
                   "Pre-Prod",
@@ -100,13 +100,13 @@
           },
           "then": {
             "properties": {
-              "profile": {
+              "Profile": {
                 "enum": [
                   "Strategic",
                   "Transitional"
                 ]
               },
-              "access": {
+              "Access": {
                 "enum": [
                   "Open",
                   "Closed"
@@ -118,7 +118,7 @@
         "deprecated-lifecycle": {
           "if": {
             "properties": {
-              "lifecycle": {
+              "Lifecycle": {
                 "enum": [
                   "Deprecated",
                   "Removed"
@@ -128,10 +128,10 @@
           },
           "then": {
             "properties": {
-              "profile": {
+              "Profile": {
                 "const": "Legacy"
               },
-              "access": {
+              "Access": {
                 "const": "Closed"
               }
             }
@@ -139,7 +139,7 @@
         }
       },
       "properties": {
-        "asset_type": {
+        "Asset": {
           "type": "string",
           "enum": [
             "REST API",
@@ -151,7 +151,7 @@
             "REST API"
           ]
         },
-        "owner": {
+        "Owner": {
           "type": "string",
           "enum": [
             "AME Payments",
@@ -170,8 +170,8 @@
             "Integration"
           ]
         },
-        "categories": {
-          "title": "Categories",
+        "Category": {
+          "title": "Category",
           "type": "array",
           "minLength": 1,
           "maxLength": 3,
@@ -195,7 +195,7 @@
             ]
           ]
         },
-        "visibility": {
+        "Visibility": {
           "type": "string",
           "enum": [
             "Internal",
@@ -205,7 +205,7 @@
             "Internal"
           ]
         },
-        "lifecycle": {
+        "Lifecycle": {
           "type": "string",
           "enum": [
             "In Development",
@@ -218,7 +218,7 @@
             "In Development"
           ]
         },
-        "profile": {
+        "Profile": {
           "type": "string",
           "title": "The profile Schema",
           "enum": [
@@ -230,7 +230,7 @@
             "Strategic"
           ]
         },
-        "access": {
+        "Access": {
           "type": "string",
           "enum": [
             "Open",
@@ -244,15 +244,15 @@
       "additionalProperties": false,
       "examples": [
         {
-          "asset_type": "REST API",
-          "owner": "Integration",
-          "categories": [
+          "Asset": "REST API",
+          "Owner": "Integration",
+          "Category": [
             "Address"
           ],
-          "visibility": "Internal",
-          "lifecycle": "Prod",
-          "profile": "Transitional",
-          "access": "Open"
+          "Visibility": "Internal",
+          "Lifecycle": "Prod",
+          "Profile": "Transitional",
+          "Access": "Open"
         }
       ]
     },
@@ -287,15 +287,15 @@
         "oas_path": "../oas/path-to-spec.yml"
       },
       "filters": {
-        "asset_type": "REST API",
-        "owner": "Integration",
-        "categories": [
+        "Asset": "REST API",
+        "Owner": "Integration",
+        "Category": [
           "Address"
         ],
-        "visibility": "Internal",
-        "lifecycle": "Pre-Prod",
-        "profile": "Transitional",
-        "access": "Closed"
+        "Visibility": "Internal",
+        "Lifecycle": "Pre-Prod",
+        "Profile": "Transitional",
+        "Access": "Closed"
       },
       "searchTags": "test1,test2,test3"
     }
