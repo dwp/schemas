@@ -4,11 +4,14 @@
   "title": "OIDC Web SSO plugin",
   "type": "object",
   "properties": {
-    "discovery_endpoint": {
+    "identity_provider": {
       "type": "string",
-      "description": "The discovery endpoint on DTH or Azure AD",
-      "format": "uri",
-      "pattern": "^(http|https)://[^ \"]+$"
+      "description": "The identity provider the plugin will interact with to carry our the OpenId Connect auth code flow",
+      "enum": [
+        "dth-sandbox",
+        "dth-test",
+        "dth-live"
+      ]
     },
     "client_id": {
       "type": "string",
@@ -71,6 +74,6 @@
   },
   "additionalProperties": false,
   "required": [
-    "discovery_endpoint"
+    "identity_provider"
   ]
 }
