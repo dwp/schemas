@@ -26,6 +26,12 @@
       ],
       "pattern": "^(?!-\\s)[a-zA-Z0-9\\s._-]+$"
     },
+    "product_id": {
+      "$id": "#root/product_id",
+      "title": "Product ID",
+      "type": "string",
+      "format": "uuid"
+    },
     "authentication_proxy": {
       "$id": "#root/authentication_proxy",
       "title": "Authentication proxy",
@@ -71,7 +77,8 @@
           "required": [
             "workspace",
             "product_name",
-            "product_gitlab_groups"
+            "product_gitlab_groups",
+            "product_id"
           ]
         },
         {
@@ -79,7 +86,8 @@
             "workspace",
             "product_name",
             "product_gitlab_groups",
-            "workspace_gitlab_groups"
+            "workspace_gitlab_groups",
+            "product_id"
           ]
         }
       ]
@@ -88,7 +96,8 @@
     {
       "required": [
       "workspace",
-      "product_name"
+      "product_name",
+      "product_id"
       ]
     }
   ]
