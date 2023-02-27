@@ -19,6 +19,12 @@
       "minLength": 2,
       "pattern": "^{vault:\/\/env\/[\\w|-]+\/?[\\w|-]+}$"
     },
+    "redirect_uri": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(http|https)://[^ \"]+$",
+      "description": "The redirect URI passed to the authorization and token endpoints"
+    },
     "session": {
       "title": "Session",
       "type": "object",
