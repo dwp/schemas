@@ -59,6 +59,10 @@
             },
             "send_timeout": {
               "type": "integer"
+            },
+            "disable_auth": {
+              "type": "boolean",
+              "default": false
             }
           },
           "required": [
