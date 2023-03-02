@@ -35,11 +35,6 @@
       "format": "uri",
       "description": "Acts in place of the default username attribute"
     },
-    "userLastNameAttributeName": {
-      "type": "string",
-      "format": "uri",
-      "description": "Acts in place of the default lastName attribute"
-    },
     "rolesAttributeName": {
       "type": "string",
       "format": "uri",
