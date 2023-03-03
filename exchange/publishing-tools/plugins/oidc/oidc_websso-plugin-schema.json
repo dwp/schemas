@@ -10,7 +10,8 @@
       "enum": [
         "dth-sandbox",
         "dth-test",
-        "dth-live"
+        "dth-live",
+        "azure-ad"
       ]
     },
     "client_id": {
