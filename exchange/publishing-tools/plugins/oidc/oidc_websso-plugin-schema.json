@@ -26,6 +26,12 @@
       "pattern": "^(http|https)://[^ \"]+$",
       "description": "The redirect URI passed to the authorization and token endpoints"
     },
+    "unauthorized_redirect_uri": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(http|https)://[^ \"]+$",
+      "description": "Where to redirect the client on unauthorized requests"
+    },
     "session": {
       "title": "Session",
       "type": "object",
