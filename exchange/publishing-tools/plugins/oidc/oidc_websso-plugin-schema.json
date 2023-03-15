@@ -67,9 +67,9 @@
             "send_timeout": {
               "type": "integer"
             },
-            "disable_auth": {
+            "auth_enabled": {
               "type": "boolean",
-              "default": false
+              "default": true
             }
           },
           "required": [

@@ -34,8 +34,7 @@
       "type": "object",
       "properties": {
         "host": {
-          "type": "string",
-          "format": "uri"
+          "type": "string"
         },
         "port": {
           "type": "number",
@@ -65,6 +64,10 @@
         },
         "database": {
           "type": "number"
+        },
+        "auth_enabled": {
+          "type": "boolean",
+          "default": true
         }
       },
       "additionalProperties": false
