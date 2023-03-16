@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://dwp.gov.uk/exchange/publishing-tools/apigw/headmatter-schema.json",
+  "title": "Headmatter",
+  "type": "object",
+  "description": "test",
+  "properties": {
+    "title": {
+      "title": "Title",
+      "type": "string",
+      "examples": [
+        "My Product"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "title"
+  ]
+}
