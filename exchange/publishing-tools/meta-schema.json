@@ -64,41 +64,27 @@
     }
   },
   "additionalProperties": false,
+  "required": [
+    "workspace"
+  ],
   "anyOf": [
     {
-      "anyOf": [
-        {
-          "required": [
-            "workspace",
-            "workspace_gitlab_groups"
-          ]
-        },
-        {
-          "required": [
-            "workspace",
-            "product_name",
-            "product_gitlab_groups",
-            "product_id"
-          ]
-        },
-        {
-          "required": [
-            "workspace",
-            "product_name",
-            "product_gitlab_groups",
-            "workspace_gitlab_groups",
-            "product_id"
-          ]
-        }
+      "required": [
+        "product_name"
       ]
-
     },
     {
       "required": [
-      "workspace",
-      "product_name",
-      "product_id"
+        "workspace_gitlab_groups"
       ]
     }
-  ]
+  ],
+  "dependencies": {
+    "product_gitlab_groups": [
+      "product_name"
+    ],
+    "product_name": [
+      "product_id"
+    ]
+  }
 }
