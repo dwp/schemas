@@ -11,6 +11,7 @@
         "dth-sandbox",
         "dth-test",
         "dth-live",
+        "dth-staging",
         "azure-ad"
       ]
     },
