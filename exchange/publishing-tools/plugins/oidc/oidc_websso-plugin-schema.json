@@ -37,6 +37,12 @@
       "title": "Session",
       "type": "object",
       "properties": {
+        "cookie_name": {
+          "type": "string",
+          "description": "The session cookie name",
+          "default": "exchange-gateway-session",
+          "minLength": 2
+        },
         "redis": {
           "title": "Redis configuration",
           "type": "object",
