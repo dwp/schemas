@@ -15,7 +15,7 @@
     },
     "consumer_path": {
       "type": "string",
-      "description": "The path that matches this Route",
+      "description": "The path that matches the route's endpoint",
       "pattern": "^\/(.*)[^\/]*$"
     },
     "http_methods": {

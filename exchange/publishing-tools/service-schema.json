@@ -13,7 +13,7 @@
       "type": "string",
       "format": "uri",
       "pattern": "^(https?)://",
-      "description": "The service base URL with format `protocol://host:port.\nIf a port is not supplied, the default port for the given protocol is used."
+      "description": "The URL of the service you are attempting to communicate with.\nThe format is `protocol://host:port.\nIf a port is not supplied, the default port for the given protocol is used."
     },
     "timeout": {
       "title": "Timeout",
