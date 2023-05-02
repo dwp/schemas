@@ -12,7 +12,8 @@
         "dth-test",
         "dth-live",
         "dth-staging",
-        "azure-ad"
+        "azure-ad",
+        "dth2-sandbox-sra"
       ]
     },
     "client_id": {
@@ -94,10 +95,43 @@
       "description": "Reference to the client secret env var in the gateway, refer to gateway module for details",
       "minLength": 3,
       "pattern": "^{vault:\/\/env\/[\\w|-]+\/?[\\w|-]+}$"
+    },
+    "confidence_level": {
+      "title": "Confidence level",
+      "description": "Extra query argument values passed to the authorization endpoint",
+      "enum": [
+        "zero",
+        "medium"
+      ]
     }
   },
-  "additionalProperties": false,
   "required": [
     "identity_provider"
-  ]
+  ],
+  "dependencies": {
+    "identity_provider": {
+      "oneOf": [
+        {
+          "properties": {
+            "identity_provider": {
+              "const": "dth2-sandbox-sra"
+            }
+          },
+          "required": [
+            "confidence_level"
+          ]
+        },
+        {
+          "not": {
+            "properties": {
+              "identity_provider": {
+                "const": "dth2-sandbox-sra"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
 }
