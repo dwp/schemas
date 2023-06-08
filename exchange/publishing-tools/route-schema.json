@@ -18,6 +18,13 @@
       "description": "The path that matches the route's endpoint",
       "pattern": "^\/(.*)[^\/]*$"
     },
+    "permitted_consumers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
     "http_methods": {
       "type": "string",
       "description": "A list of HTTP methods that match this Route",
