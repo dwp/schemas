@@ -5,82 +5,25 @@
   "title": "Rate limiting advanced plugin",
   "description": "Rate limit how many HTTP requests can be made in a given period of seconds, minutes, hours, days, months, or years. If the underlying Service/Route (or deprecated API entity) has no authentication layer, the Client IP address will be used; otherwise, the Consumer will be used if an authentication plugin has been configured.",
   "properties": {
-    "definitions": {
-      "properties": {
-        "per_second": {
-          "type": "number",
-          "minimum": 1,
-          "description": "The number of HTTP requests that can be made per second"
-        },
-        "per_minute": {
-          "type": "number",
-          "minimum": 1,
-          "description": "The number of HTTP requests that can be made per minute"
-        },
-        "per_hour": {
-          "type": "number",
-          "minimum": 1,
-          "description": "The number of HTTP requests that can be made per hour"
-        },
-        "per_day": {
-          "type": "number",
-          "minimum": 1,
-          "description": "The number of HTTP requests that can be made per day"
-        }
-      },
-      "additionalProperties": false,
-      "anyOf": [
-        {
-          "title": "per_second",
-          "required": [
-            "per_second"
-          ]
-        },
-        {
-          "title": "per_minute",
-          "required": [
-            "per_minute"
-          ]
-        },
-        {
-          "title": "per_hour",
-          "required": [
-            "per_hour"
-          ]
-        },
-        {
-          "title": "per_day",
-          "required": [
-            "per_day"
-          ]
-        },
-        {
-          "title": "per_consumer",
-          "required": [
-            "per_consumer"
-          ]
-        }
-      ]
+    "per_second": {
+      "type": "number",
+      "minimum": 1,
+      "description": "The number of HTTP requests that can be made per second"
     },
-    "per_consumer": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/properties/definitions"
-          }
-        ],
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uri"
-          }
-        },
-        "required": [
-          "id"
-        ]
-      }
+    "per_minute": {
+      "type": "number",
+      "minimum": 1,
+      "description": "The number of HTTP requests that can be made per minute"
+    },
+    "per_hour": {
+      "type": "number",
+      "minimum": 1,
+      "description": "The number of HTTP requests that can be made per hour"
+    },
+    "per_day": {
+      "type": "number",
+      "minimum": 1,
+      "description": "The number of HTTP requests that can be made per day"
     },
     "hide_client_headers": {
       "type": "boolean",
@@ -130,9 +73,31 @@
       "additionalProperties": false
     }
   },
-  "allOf": [
+  "additionalProperties": false,
+  "anyOf": [
     {
-      "$ref": "#/properties/definitions"
+      "title": "per_second",
+      "required": [
+        "per_second"
+      ]
+    },
+    {
+      "title": "per_minute",
+      "required": [
+        "per_minute"
+      ]
+    },
+    {
+      "title": "per_hour",
+      "required": [
+        "per_hour"
+      ]
+    },
+    {
+      "title": "per_day",
+      "required": [
+        "per_day"
+      ]
     }
   ]
 }
