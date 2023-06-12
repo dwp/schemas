@@ -18,18 +18,6 @@
       "description": "The path that matches the route's endpoint",
       "pattern": "^\/(.*)[^\/]*$"
     },
-    "permitted_consumers": {
-      "type": "array",
-      "items": {
-        "description": "The ID of your consumers",
-        "type": "string",
-        "examples": [
-          "a.service.gov.uk",
-          "b.service.gov.uk",
-          "c.service.gov.uk"
-        ]
-      }
-    },
     "http_methods": {
       "type": "string",
       "description": "A list of HTTP methods that match this Route",
