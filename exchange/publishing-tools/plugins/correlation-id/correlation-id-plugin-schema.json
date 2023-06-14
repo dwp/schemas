@@ -1,10 +1,37 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://dwp.gov.uk/exchange/publishing-tools/plugins/correlation-id/correlation-id-plugin-schema.json",
-  "type": "string",
-  "title": "Correlation ID plugin",
-  "minLength": 2,
-  "maxLength": 50,
-  "default": "trackingId",
-  "description": "Injects a header into a request. Useful for tracing request across tech stack."
+  "oneOf": [
+    {
+      "type": "string",
+      "title": "Correlation ID plugin",
+      "minLength": 2,
+      "maxLength": 50,
+      "default": "trackingId",
+      "description": "Injects a header into a request. Useful for tracing request across tech stack."
+    },
+    {
+      "type": "object",
+      "title": "Correlation ID plugin",
+      "description": "Injects a header into a request. Useful for tracing request across tech stack.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 50,
+          "default": "trackingId"
+        },
+        "generator": {
+          "type": "string",
+          "default": "uuid#counter"
+        },
+        "echo_downstream": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "required": ["name"],
+      "additionalProperties": false
+    }
+  ]
 }
