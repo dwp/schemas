@@ -13,8 +13,20 @@
         "dth-live",
         "dth-staging",
         "azure-ad",
-        "dth2-sandbox-sra"
+        "dth2-sandbox-sra",
+        "nhs-dev-simple",
+        "nhs-dev",
+        "nhs-int",
+        "nhs-live"
       ]
+    },
+    "additional_scopes": {
+      "type": "array",
+      "description": "Additional scopes to request from the authorization endpoint",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "client_id": {
       "type": "string",
