@@ -40,6 +40,12 @@
       "pattern": "^(http|https)://[^ \"]+$",
       "description": "The redirect URI passed to the authorization and token endpoints"
     },
+    "logout_redirect_uri": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(http|https)://[^ \"]+$",
+      "description": "Where to redirect the client on logout"
+    },
     "unauthorized_redirect_uri": {
       "type": "string",
       "format": "uri",
