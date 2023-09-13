@@ -46,6 +46,7 @@
       "type": "array",
       "items": {
         "type": "string",
+        "pattern": "^@dwp\/(?:\\w+|-\\w+|\/\\w+)+$",
         "examples": [
           "@dwp/team-name"
         ]
@@ -55,12 +56,81 @@
       "$id": "#root/product_gitlab_groups",
       "title": "GitLab groups for product name",
       "type": "array",
+      "pattern": "^@dwp/(?:\\w+|-\\w+|/\\w+)+$",
       "items": {
         "type": "string",
         "examples": [
           "@dwp/team-name"
         ]
       }
+    },
+    "onboarding": {
+      "$id": "#root/onboarding",
+      "title": "Additional information required for onboarding",
+      "type": "object",
+      "properties": {
+        "ifdp": {
+          "type": "string",
+          "pattern": "^IFDP-\\d+$",
+          "examples": [
+            "IFDP-1234"
+          ]
+        },
+        "hcs": {
+          "type": "boolean"
+        },
+        "hosts": {
+          "type": "object",
+          "properties": {
+            "non-prod": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^(?:(\\*\\.)?[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*)?$",
+                "examples": [
+                  "api.example.dwp.gov.uk"
+                ]
+              }
+            },
+            "prod": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^(?:(\\*\\.)?[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*)?$",
+                "examples": [
+                  "api.example.dwp.gov.uk"
+                ]
+              }
+            }
+          }
+        },
+        "ip_ranges": {
+          "type": "object",
+          "properties": {
+            "non-prod": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^\\d+(?:\\.\\d+)+/\\d+$",
+                "examples": [
+                  "10.82.108.0/22"
+                ]
+              }
+            },
+            "prod": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^\\d+(?:\\.\\d+)+\/\\d+$",
+                "examples": [
+                  "10.82.108.0/22"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
