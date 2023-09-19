@@ -12,6 +12,7 @@
         "dth-test",
         "dth-live",
         "dth-staging",
+        "dth-stub",
         "azure-ad",
         "dth2-sandbox",
         "dth2-sandbox-sra",
@@ -51,6 +52,12 @@
       "format": "uri",
       "pattern": "^(http|https)://[^ \"]+$",
       "description": "Where to redirect the client on logout"
+    },
+    "stub_hostname": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(http|https)://[^ \"]+$",
+      "description": "The hostname used for dth-stub"
     },
     "unauthorized_redirect_uri": {
       "type": "string",
@@ -151,10 +158,28 @@
           ]
         },
         {
+          "properties": {
+            "identity_provider": {
+              "const": "dth-stub"
+            }
+          },
+          "required": [
+            "stub_hostname"
+          ]
+        },
+        {
           "not": {
             "properties": {
               "identity_provider": {
-                "const": "dth2-sandbox-sra"
+                "anyOf": [
+                  {
+                    "const": "dth2-sandbox-sra"
+                  },
+                  {
+                    "const": "dth-stub"
+                  }
+                ]
+
               }
             }
           }
