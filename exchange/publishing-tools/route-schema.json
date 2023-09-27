@@ -87,6 +87,16 @@
     "response_buffering": {
       "type": "boolean",
       "description": "Whether to enable response body buffering or not"
+    },
+    "headers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[\\w-]+:[\\w-]+$",
+        "examples": [
+          "test-header:example"
+        ]
+      }
     }
   },
   "additionalProperties": false
