@@ -92,7 +92,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "pattern": "^[\\w-]+:[\\w-]+$",
+        "pattern": "^[\\w-]+:[^\\s]+$",
         "examples": [
           "test-header:example"
         ]
