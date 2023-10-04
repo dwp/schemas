@@ -89,14 +89,22 @@
       "description": "Whether to enable response body buffering or not"
     },
     "headers": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "pattern": "^[\\w-]+:[^\\s]+$",
-        "examples": [
-          "test-header:example"
-        ]
-      }
+      "type": "object",
+      "patternProperties": {
+        "^[\\w-]+$": {
+          "title": "header",
+          "type": "array",
+          "examples": ["example-header:"],
+          "items": {
+            "type": "string",
+            "pattern": "^\\S+$",
+            "examples": [
+              "example_value"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false
