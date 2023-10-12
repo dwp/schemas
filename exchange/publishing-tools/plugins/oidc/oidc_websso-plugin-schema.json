@@ -39,13 +39,38 @@
       "type": "string",
       "description": "Reference to the client id env var in the gateway, refer to gateway module for details",
       "minLength": 2,
-      "pattern": "^{vault:\/\/env\/[\\w|-]+\/?[\\w|-]+}$"
+      "pattern": "^(\\{vault:\/\/env\/|[^{]).*$"
     },
     "redirect_uri": {
       "type": "string",
       "format": "uri",
       "pattern": "^(http|https)://[^ \"]+$",
       "description": "The redirect URI passed to the authorization and token endpoints"
+    },
+    "uplift": {
+      "type": "object",
+      "description": "Uplift configuration to allow moving from a lower `confidence_level` to a higher one",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Whether to enable uplift",
+          "default": true
+        },
+        "redirect_uri": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^(http|https)://[^ \"]+$",
+          "description": "Gateway URI to redirect the user to for uplift. If omitted then redirect will default to the route’s host, path and any query args will be maintained"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    },
+    "logout": {
+      "type": "boolean",
+      "description": "If true, this route will not forward to the upstream application. Instead, it will end the user's session and redirect to the IDP's logout URI. The IDP's logout URI will then redirect to the application's logout confirmation page, which should have a different path than the logout path, for example, /logout and /signed-out.",
+      "default": false
     },
     "logout_redirect_uri": {
       "type": "string",
@@ -176,7 +201,6 @@
                     "const": "dth-stub"
                   }
                 ]
-
               }
             }
           }
@@ -184,5 +208,26 @@
       ]
     }
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "logout": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "then": {
+          "properties": {
+            "client_id": {
+              "pattern": "^[^\/{].*",
+              "description": "client_id cannot be a vault reference when logout is true"
+            }
+          }
+        }
+      }
+    }
+  ],
   "additionalProperties": false
 }
