@@ -198,6 +198,7 @@
         },
         "visibility": {
           "type": "string",
+          "description": "The scope of visibility for the API, either Public (visible to all) or Internal (visible to dwp only)",
           "enum": [
             "Internal",
             "Public"
@@ -233,6 +234,7 @@
         },
         "access": {
           "type": "string",
+          "description": "The availability of the API",
           "enum": [
             "Open",
             "Closed"
