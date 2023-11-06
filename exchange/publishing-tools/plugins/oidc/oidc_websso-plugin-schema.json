@@ -95,6 +95,11 @@
       "description": "Whether to preserve query arguments even when doing authorization code flow",
       "default": false
     },
+    "verify_parameters": {
+      "type": "boolean",
+      "description": "Verify plugin configuration against discovery",
+      "default": true
+    },
     "session": {
       "title": "Session",
       "type": "object",
