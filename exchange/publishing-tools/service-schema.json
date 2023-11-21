@@ -59,11 +59,10 @@
     "routes": {
       "title": "Routes",
       "type": "array",
-      "items": [
+      "items":
         {
           "$ref": "route-schema.json"
         }
-      ]
     },
     "plugins": {
       "title": "Plugins",
