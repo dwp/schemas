@@ -167,6 +167,26 @@
         "zero",
         "medium"
       ]
+    },
+    "http_proxy": {
+      "title": "HTTP proxy URL",
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(http|https)://[^ \"]+$",
+      "description": "The URL of the HTTP proxy to use for outgoing requests",
+      "examples": [
+        "https://proxy.example.com:3128"
+      ]
+    },
+    "https_proxy": {
+      "title": "HTTPS proxy URL",
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(http|https)://[^ \"]+$",
+      "description": "The URL of the HTTPS proxy to use for outgoing requests",
+      "examples": [
+        "https://proxy.example.com:3128"
+      ]
     }
   },
   "required": [
