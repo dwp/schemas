@@ -32,7 +32,6 @@
     },
     "usernameAttributeName": {
       "type": "string",
-      "format": "uri",
       "description": "Acts in place of the default username attribute"
     },
     "userLastNameAttributeName": {
@@ -130,7 +129,6 @@
   "required": [
     "idpRedirectEndpoint",
     "pathToListenOn",
-    "customIssuer",
     "userIdAttributeName",
     "usernameAttributeName",
     "rolesAttributeName",
@@ -156,18 +154,36 @@
       }
     },
     "authIndex": {
-      "if": {
-        "properties": {
-          "authIndex": {
-            "const": 6
+      "oneOf": [
+        {
+          "properties": {
+            "authIndex": {
+              "const": 7
+            }
+          },
+          "required": [
+            "easAssertionConsumerUrl",
+            "easCustomIssuer"
+          ]
+        },
+        {
+          "properties": {
+            "authIndex": {
+              "const": 6
+            }
+          },
+          "required": [
+            "customAuthnRequestXML"
+          ]
+        },
+        {
+          "properties": {
+            "authIndex": {
+              "enum": [1,2,3,4,5]
+            }
           }
         }
-      },
-      "then": {
-        "required": [
-          "customAuthnRequestXML"
-        ]
-      }
+      ]
     }
   }
 }
