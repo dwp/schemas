@@ -10,8 +10,18 @@
   ],
   "properties": {
     "host": {
-      "type": "string",
-      "description": "The domain name that matches this Route"
+      "oneOf": [{
+        "type": "string",
+        "description": "The domain name that matches this Route"
+      },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The domain names that match this Route"
+        }
+      ]
     },
     "consumer_path": {
       "type": "string",
