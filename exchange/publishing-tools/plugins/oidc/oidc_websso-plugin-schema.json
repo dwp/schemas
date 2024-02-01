@@ -193,6 +193,16 @@
     "identity_provider"
   ],
   "dependencies": {
+    "confidence_level": {
+      "not": {
+        "properties": {
+          "identity_provider": {
+            "description": "Confidence level is not supported for NHS providers",
+            "pattern": "^(nhs-).*$"
+          }
+        }
+      }
+    },
     "identity_provider": {
       "oneOf": [
         {
