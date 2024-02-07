@@ -4,39 +4,18 @@
   "type": "object",
   "title": "OIDC API Gateway plugin",
   "properties": {
-    "discovery_endpoint": {
+    "identity_provider": {
       "type": "string",
-      "format": "uri",
-      "pattern": "^(http|https)://[^ \"]+$",
-      "description": "The discovery endpoint on DTH or Azure AD"
+      "description": "The identity provider the plugin will interact with to carry our the OpenId Connect auth code flow",
+      "enum": [
+        "cognito-non-prod"
+      ]
     },
     "client_id": {
       "type": "string",
       "minLength": 2,
       "pattern": "^{vault:\/\/env\/[\\w|-]+\/?[\\w|-]+}$",
       "description": "Reference to the client id env var in the gateway, refer to gateway module for details"
-    },
-    "scopes_required": {
-      "title": "Scopes required",
-      "type": "array",
-      "description": "The scopes required to be present in the access token",
-      "items": [
-        {
-          "type": "string",
-          "minLength": 2
-        }
-      ]
-    },
-    "issuers_allowed": {
-      "title": "Issuers allowed",
-      "type": "array",
-      "description": "The issuers allowed to be present in the tokens",
-      "items": [
-        {
-          "type": "string",
-          "minLength": 2
-        }
-      ]
     },
     "cache_ttl": {
       "type": "integer",
@@ -71,8 +50,6 @@
   },
   "additionalProperties": false,
   "required": [
-    "discovery_endpoint",
-    "scopes_required",
-    "issuers_allowed"
+    "identity_provider"
   ]
 }
