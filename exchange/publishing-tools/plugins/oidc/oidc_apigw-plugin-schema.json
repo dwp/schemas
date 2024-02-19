@@ -12,6 +12,11 @@
         "azure-ad"
       ]
     },
+    "use_internet": {
+      "type": "boolean",
+      "description": "Determines whether the JWKS endpoints for your IDP will be internet facing",
+      "default": true
+    },
     "client_id": {
       "type": "string",
       "minLength": 2,
@@ -52,5 +57,21 @@
   "additionalProperties": false,
   "required": [
     "identity_provider"
-  ]
+  ],
+  "dependencies": {
+    "identity_provider": {
+      "if": {
+        "properties": {
+          "identity_provider": {
+            "const": "cognito-non-prod"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "use_internet"
+        ]
+      }
+    }
+  }
 }
