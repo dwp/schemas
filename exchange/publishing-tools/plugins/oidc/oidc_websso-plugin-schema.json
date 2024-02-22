@@ -79,6 +79,15 @@
       "pattern": "^(http|https)://[^ \"]+$",
       "description": "Where to redirect the client on logout"
     },
+    "logout_revoke": {
+      "type": "boolean",
+      "description": "If true, the plugin will attempt to revoke the token before redirecting to the IDP's logout URI",
+      "default": false
+    },
+    "logout_uri_suffix": {
+      "type": "string",
+      "description": "The request URI suffix that activates the logout process"
+    },
     "stub_hostname": {
       "type": "string",
       "format": "uri",
