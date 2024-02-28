@@ -88,6 +88,17 @@
       "type": "string",
       "description": "The request URI suffix that activates the logout process"
     },
+    "logout_methods": {
+      "type": "array",
+      "description": "The request methods that can activate the logout process",
+      "items": {
+        "enum": [
+          "POST",
+          "GET",
+          "DELETE"
+        ]
+      }
+    },
     "stub_hostname": {
       "type": "string",
       "format": "uri",
@@ -119,6 +130,14 @@
           "description": "The session cookie name",
           "default": "exchange-gateway-session",
           "minLength": 2
+        },
+        "cookie_idletime": {
+          "type": "number",
+          "description": "The session cookie idle time in seconds"
+        },
+        "cookie_renew": {
+          "type": "number",
+          "description": "The number of seconds prior to the `session_cookie_lifetime` that the session cookie will be renewed"
         },
         "redis": {
           "title": "Redis configuration",
