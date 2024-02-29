@@ -139,6 +139,11 @@
           "type": "number",
           "description": "The number of seconds prior to the `session_cookie_lifetime` that the session cookie will be renewed"
         },
+        "cookie_lifetime": {
+          "type": "number",
+          "description": "The session cookie lifetime in seconds. Defaults is 1800 seconds (30 minutes)",
+          "default": 1800
+        },
         "redis": {
           "title": "Redis configuration",
           "type": "object",
