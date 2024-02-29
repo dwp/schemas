@@ -9,6 +9,7 @@
       "description": "The identity provider the plugin will interact with to carry our the OpenId Connect auth code flow",
       "enum": [
         "cognito-non-prod",
+        "cognito-prod",
         "azure-ad"
       ]
     },
@@ -26,6 +27,14 @@
       "examples": [
         "https://proxy.example.com:3128"
       ]
+    },
+    "scopes_required": {
+      "type": "array",
+      "description": "The scopes required to be present in the access token (or introspection results) for successful authorization.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "client_id": {
       "type": "string",
