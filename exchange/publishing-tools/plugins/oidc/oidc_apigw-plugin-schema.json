@@ -82,7 +82,11 @@
       "if": {
         "properties": {
           "identity_provider": {
-            "const": "cognito-non-prod"
+            "enum":
+            [
+              "cognito-non-prod",
+              "cognito-prod"
+            ]
           }
         }
       },
