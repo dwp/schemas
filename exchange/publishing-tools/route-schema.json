@@ -10,10 +10,11 @@
   ],
   "properties": {
     "host": {
-      "oneOf": [{
-        "type": "string",
-        "description": "The domain name that matches this Route"
-      },
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "The domain name that matches this Route"
+        },
         {
           "type": "array",
           "items": {
@@ -24,9 +25,21 @@
       ]
     },
     "consumer_path": {
-      "type": "string",
-      "description": "The path that matches the route's endpoint",
-      "pattern": "^\/(.*)[^\/]*$"
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "The path that matches the route's endpoint",
+          "pattern": "^\/(.*)[^\/]*$"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The paths that match the route's endpoint",
+            "pattern": "^\/(.*)[^\/]*$"
+          }
+        }
+      ]
     },
     "permitted_consumers": {
       "type": "array",
@@ -104,7 +117,9 @@
         "^[\\w-]+$": {
           "title": "header",
           "type": "array",
-          "examples": ["example-header:"],
+          "examples": [
+            "example-header:"
+          ],
           "items": {
             "type": "string",
             "pattern": "^\\S+$",
