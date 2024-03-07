@@ -99,6 +99,10 @@
         ]
       }
     },
+    "logout_query_arg": {
+      "type": "string",
+      "description": "The query argument that activates the logout process"
+    },
     "stub_hostname": {
       "type": "string",
       "format": "uri",
