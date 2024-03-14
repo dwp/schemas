@@ -9,6 +9,7 @@
       "description": "The identity provider the plugin will interact with to carry our the OpenId Connect auth code flow",
       "enum": [
         "cognito-non-prod",
+        "cognito-staging",
         "cognito-prod",
         "azure-ad"
       ]
