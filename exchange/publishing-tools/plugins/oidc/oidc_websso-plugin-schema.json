@@ -22,6 +22,8 @@
         "dth2-live",
         "dth2-sra",
         "dth2-dev-domino",
+        "dth2-dev-onelogin",
+        "dth2-test-onelogin",
         "nhs-dev-simple",
         "nhs-dev",
         "nhs-int",
