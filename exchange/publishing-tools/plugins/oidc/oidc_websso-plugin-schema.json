@@ -117,6 +117,12 @@
       "pattern": "^(http|https)://[^ \"]+$",
       "description": "Where to redirect the client on unauthorized requests"
     },
+    "forbidden_redirect_uri": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(http|https)://[^ \"]+$",
+      "description": "Where to redirect the client on forbidden requests"
+    },
     "preserve_query_args": {
       "type": "boolean",
       "description": "Whether to preserve query arguments even when doing authorization code flow",
