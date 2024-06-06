@@ -131,6 +131,14 @@
         "auth_enabled": {
           "type": "boolean",
           "default": true
+        },
+        "username": {
+          "type": "string",
+          "pattern": "^(\\{vault:\/\/|[^{]).*$"
+        },
+        "password": {
+          "type": "string",
+          "pattern": "^(\\{vault:\/\/|[^{]).*$"
         }
       },
       "additionalProperties": false
