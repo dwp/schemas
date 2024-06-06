@@ -11,7 +11,8 @@
         "cognito-non-prod",
         "cognito-staging",
         "cognito-prod",
-        "azure-ad"
+        "azure-ad",
+        "kbv-tactical-dev"
       ]
     },
     "use_internet": {
@@ -53,6 +54,34 @@
       "type": "boolean",
       "default": false
     },
+    "introspection_endpoint": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(http|https)://[^ \"]+$",
+      "description": "The introspection endpoint. If set it overrides the value in introspection_endpoint returned by the discovery endpoint"
+    },
+    "auth_methods": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "password",
+          "client_credentials",
+          "authorization_code",
+          "bearer",
+          "introspection",
+          "userinfo",
+          "kong_oauth2",
+          "refresh_token",
+          "session"
+        ]
+      },
+      "description": "Types of credentials/grants to enable"
+    },
+    "upstream_introspection_header": {
+      "type": "string",
+      "description": "The header to use for the introspection request to the upstream server"
+    },
     "display_errors": {
       "type": "boolean",
       "default": false
@@ -83,8 +112,7 @@
       "if": {
         "properties": {
           "identity_provider": {
-            "enum":
-            [
+            "enum": [
               "cognito-non-prod",
               "cognito-prod"
             ]
