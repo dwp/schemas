@@ -123,6 +123,14 @@
       "pattern": "^(http|https)://[^ \"]+$",
       "description": "Where to redirect the client on forbidden requests"
     },
+    "groups_required": {
+      "type": "array",
+      "description": "The groups required to be present in the access token (or introspection results) for successful authorization.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
     "preserve_query_args": {
       "type": "boolean",
       "description": "Whether to preserve query arguments even when doing authorization code flow",

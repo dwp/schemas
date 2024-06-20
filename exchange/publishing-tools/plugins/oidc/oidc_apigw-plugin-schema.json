@@ -60,6 +60,20 @@
       "pattern": "^(http|https)://[^ \"]+$",
       "description": "The introspection endpoint. If set it overrides the value in introspection_endpoint returned by the discovery endpoint"
     },
+    "forbidden_redirect_uri": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(http|https)://[^ \"]+$",
+      "description": "Where to redirect the client on forbidden requests"
+    },
+    "groups_required": {
+      "type": "array",
+      "description": "The groups required to be present in the access token (or introspection results) for successful authorization.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
     "auth_methods": {
       "type": "array",
       "items": {
