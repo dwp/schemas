@@ -12,7 +12,9 @@
         "cognito-staging",
         "cognito-prod",
         "azure-ad",
-        "kbv-tactical-dev"
+        "kbv-tactical-dev",
+        "kbv-tactical-test",
+        "kbv-tactical-nft"
       ]
     },
     "use_internet": {
