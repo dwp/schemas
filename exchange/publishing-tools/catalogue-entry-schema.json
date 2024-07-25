@@ -58,7 +58,7 @@
         "oas_path": {
           "type": "string",
           "description": "Path to the technical documentation, relative to the current working directory.",
-          "pattern": "((?:[^\/]*\/)*)(?=\\.(yaml|yml|json))"
+          "pattern": "((?:[^\/]*\/)*)(?=\\.(yaml|yml))"
         }
       },
       "additionalProperties": false,
