@@ -38,6 +38,14 @@
         "minLength": 1
       }
     },
+    "audience_required": {
+      "type": "array",
+      "description": "The audience required to be present in the access token (or introspection results) for successful authorization.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
     "client_id": {
       "type": "string",
       "description": "Reference to the client id env var in the gateway, refer to gateway module for details",

@@ -40,6 +40,14 @@
         "minLength": 1
       }
     },
+    "audience_required": {
+      "type": "array",
+      "description": "The audience required to be present in the access token (or introspection results) for successful authorization.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
     "client_id": {
       "type": "string",
       "minLength": 2,
