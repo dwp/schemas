@@ -27,7 +27,8 @@
         "nhs-dev-simple",
         "nhs-dev",
         "nhs-int",
-        "nhs-live"
+        "nhs-live",
+        "keycloak-local"
       ]
     },
     "additional_scopes": {
