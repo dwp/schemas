@@ -28,11 +28,7 @@
         "nhs-dev",
         "nhs-int",
         "nhs-live",
-        "keycloak-local",
-        "ame-payments-dev",
-        "ame-payments-test",
-        "ame-payments-prestag",
-        "ame-payments-perf"
+        "keycloak-local"
       ]
     },
     "additional_scopes": {
@@ -136,12 +132,6 @@
       "pattern": "^(http|https)://[^ \"]+$",
       "description": "Where to redirect the client on forbidden requests"
     },
-    "unexpected_redirect_uri": {
-      "type": "string",
-      "format": "uri",
-      "pattern": "^(http|https)://[^ \"]+$",
-      "description": "Where to redirect the client when unexpected errors happen with the requests"
-    },
     "groups_required": {
       "type": "array",
       "description": "The groups required to be present in the access token (or introspection results) for successful authorization.",
@@ -214,12 +204,6 @@
             "auth_enabled": {
               "type": "boolean",
               "default": true
-            },
-            "username": {
-              "type": "string"
-            },
-            "password": {
-              "type": "string"
             }
           },
           "required": [
@@ -235,6 +219,7 @@
       "title": "Client secrets",
       "type": "array",
       "description": "Reference to the client secret env var in the gateway, refer to gateway module for details",
+      "minLength": 3,
       "pattern": "^{vault:\/\/env\/[\\w|-]+\/?[\\w|-]+}$"
     },
     "confidence_level": {
