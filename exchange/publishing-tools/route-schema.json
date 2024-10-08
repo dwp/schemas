@@ -13,14 +13,16 @@
       "oneOf": [
         {
           "type": "string",
-          "description": "The domain name that matches this Route"
+          "description": "The domain name that matches this route",
+          "pattern": "^(\\*\\.[^*]+|[^*]+|)$"
         },
         {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^(\\*\\.[^*]+|[^*]+|)$"
           },
-          "description": "The domain names that match this Route"
+          "description": "The domain names that match this route"
         }
       ]
     },
