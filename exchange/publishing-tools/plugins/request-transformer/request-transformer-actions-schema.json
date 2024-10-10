@@ -16,31 +16,31 @@
       "title": "Add transformations",
       "type": "array",
       "minLength": 1,
-      "items": { "type": "string", "pattern": "^([a-z]+[-|_:]?[a-z]+)+$" }
+      "items": { "type": "string", "format": "^([a-z]+[-|_:]?[a-z]+)+$" }
     },
     "append": {
       "title": "Append transformations",
       "type": "array",
       "minLength": 1,
-      "items": { "type": "string", "pattern": "^([a-z]+[-|_:]?[a-z]+)+$" }
+      "items": { "type": "string", "format": "^([a-z]+[-|_:]?[a-z]+)+$" }
     },
     "remove": {
       "title": "Remove transformations",
       "type": "array",
       "minLength": 1,
-      "items": { "type": "string", "pattern": "^([a-z]+[-|_:]?[a-z]+)+$" }
+      "items": { "type": "string", "format": "^([a-z]+[-|_:]?[a-z]+)+$" }
     },
     "rename": {
       "title": "Rename transformations",
       "type": "array",
       "minLength": 1,
-      "items": { "type": "string", "pattern": "^([a-z]+[-|_:]?[a-z]+)+$" }
+      "items": { "type": "string", "format": "^([a-z]+[-|_:]?[a-z]+)+$" }
     },
     "replace": {
       "title": "Replace transformations",
       "type": "array",
       "minLength": 1,
-      "items": { "type": "string", "pattern": "^([a-z]+[-|_:]?[a-z]+)+$" }
+      "items": { "type": "string", "format": "^([a-z]+[-|_:]?[a-z]+)+$" }
     }
   },
   "additionalProperties": false
