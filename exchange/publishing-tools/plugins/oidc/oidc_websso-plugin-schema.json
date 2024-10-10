@@ -235,7 +235,7 @@
       "title": "Client secrets",
       "type": "array",
       "description": "Reference to the client secret env var in the gateway, refer to gateway module for details",
-      "pattern": "^{vault:\/\/env\/[\\w|-]+\/?[\\w|-]+}$"
+      "pattern": "^\\{vault://env/[\\w|-]+/?[\\w|-]+\\}$"
     },
     "confidence_level": {
       "title": "Confidence level",

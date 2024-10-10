@@ -5,92 +5,42 @@
   "type": "object",
   "title": "Request transformer actions plugin",
   "anyOf": [
-    {
-      "title": "add",
-      "required": [
-        "add"
-      ]
-    },
-    {
-      "title": "append",
-      "required": [
-        "append"
-      ]
-    },
-    {
-      "title": "remove",
-      "required": [
-        "remove"
-      ]
-    },
-    {
-      "title": "rename",
-      "required": [
-        "rename"
-      ]
-    },
-    {
-      "title": "replace",
-      "required": [
-        "replace"
-      ]
-    }
+    { "title": "add", "required": ["add"] },
+    { "title": "append", "required": ["append"] },
+    { "title": "remove", "required": ["remove"] },
+    { "title": "rename", "required": ["rename"] },
+    { "title": "replace", "required": ["replace"] }
   ],
   "properties": {
     "add": {
       "title": "Add transformations",
       "type": "array",
       "minLength": 1,
-      "items": [
-        {
-          "type": "string",
-          "format": "^([a-z]+[-|_|:]?[a-z]+)+$"
-        }
-      ]
+      "items": { "type": "string", "pattern": "^([a-z]+[-|_:]?[a-z]+)+$" }
     },
     "append": {
       "title": "Append transformations",
       "type": "array",
       "minLength": 1,
-      "items": [
-        {
-          "type": "string",
-          "format": "^([a-z]+[-|_|:]?[a-z]+)+$"
-        }
-      ]
+      "items": { "type": "string", "pattern": "^([a-z]+[-|_:]?[a-z]+)+$" }
     },
     "remove": {
       "title": "Remove transformations",
       "type": "array",
       "minLength": 1,
-      "items": [
-        {
-          "type": "string",
-          "format": "^([a-z]+[-|_|:]?[a-z]+)+$"
-        }
-      ]
+      "items": { "type": "string", "pattern": "^([a-z]+[-|_:]?[a-z]+)+$" }
     },
     "rename": {
       "title": "Rename transformations",
       "type": "array",
       "minLength": 1,
-      "items": [
-        {
-          "type": "string",
-          "format": "^([a-z]+[-|_|:]?[a-z]+)+$"
-        }
-      ]
+      "items": { "type": "string", "pattern": "^([a-z]+[-|_:]?[a-z]+)+$" }
     },
     "replace": {
       "title": "Replace transformations",
       "type": "array",
       "minLength": 1,
-      "items": [
-        {
-          "type": "string",
-          "format": "^([a-z]+[-|_|:]?[a-z]+)+$"
-        }
-      ]
+      "items": { "type": "string", "pattern": "^([a-z]+[-|_:]?[a-z]+)+$" }
     }
   },
   "additionalProperties": false

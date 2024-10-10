@@ -20,6 +20,7 @@
       "type": "object",
       "properties": {
         "secs": {
+          "type:": "integer",
           "exclusiveMinimum": 0,
           "maximum": 900,
           "default": 60

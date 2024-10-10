@@ -51,7 +51,7 @@
     "client_id": {
       "type": "string",
       "minLength": 2,
-      "pattern": "^{vault:\/\/env\/[\\w|-]+\/?[\\w|-]+}$",
+      "pattern": "^\\{vault://env/[\\w|-]+/?[\\w|-]+\\}$",
       "description": "Reference to the client id env var in the gateway, refer to gateway module for details"
     },
     "cache_ttl": {
@@ -124,7 +124,7 @@
       "type": "string",
       "description": "Reference to the client secret env var in the gateway, refer to gateway module for details",
       "minLength": 3,
-      "pattern": "^{vault:\/\/env\/[\\w|-]+\/?[\\w|-]+}$"
+      "pattern": "^\\{vault://env/[\\w|-]+/?[\\w|-]+\\}$"
     }
   },
   "additionalProperties": false,

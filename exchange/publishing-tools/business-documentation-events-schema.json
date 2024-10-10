@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://dwp.gov.uk/exchange/publishing-tools/apigw/business-documentation-events-schema.json",
+  "title": "Events Business Documentation",
+  "type": "object",
+  "properties": {
+    "Overview": {
+      "type": "string",
+      "pattern": "^(?!.*<iframe(\\s[^>]*)*>).*$",
+      "minLength": 20,
+      "maxLength": 500,
+      "description": "The overview section of the Markdown file. Must not contain <iframe> tags."
+    },
+    "Use Cases": {
+      "type": "string",
+      "pattern": "^(?!.*<iframe(\\s[^>]*)*>).*$",
+      "minLength": 20,
+      "maxLength": 500,
+      "description": "The use cases section of the Markdown file."
+    },
+    "Data Provided": {
+      "type": "string",
+      "pattern": "^(?!.*<iframe(\\s[^>]*)*>).*$",
+      "minLength": 20,
+      "maxLength": 500,
+      "description": "The data provided section of the Markdown file."
+    },
+    "Useful Resources": {
+      "type": "string",
+      "pattern": "^(?!.*<iframe(\\s[^>]*)*>).*$",
+      "minLength": 20,
+      "maxLength": 500,
+      "description": "The useful resources section of the Markdown file."
+    },
+    "Getting Started": {
+      "type": "string",
+      "pattern": "^(?!.*<iframe(\\s[^>]*)*>).*$",
+      "minLength": 20,
+      "maxLength": 500,
+      "description": "The getting started section of the Markdown file."
+    },
+    "Support": {
+      "type": "string",
+      "pattern": "^(?!.*<iframe(\\s[^>]*)*>).*$",
+      "minLength": 20,
+      "maxLength": 500,
+      "description": "The support section of the Markdown file."
+    }
+  },
+  "required": ["Overview"],
+  "additionalProperties": false
+}
