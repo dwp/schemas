@@ -6,64 +6,64 @@
   "properties": {
     "Overview": {
       "type": "string",
-      "minLength": 20,
-      "maxLength": 500,
+      "minWords": 20,
+      "maxWords": 500,
       "pattern": "^(?!.*<iframe(\\s[^>]*)*>)[\\s\\S]*$",
       "default": "\nThe Award Details API service allows you to gain access to the amount of benefit awarded to a citizen. This service uses the National Insurance Number (or NINO) to identify the citizens and supply an amount of benefit as the sum of all benefits awarded. You can specify the time period and customise the output accordingly. The service was created to allow DWP, and our citizen-facing users, to easily verify the amount of benefits awarded to a citizen. This allows us to keep this data in one secure place, rather than in, for example, spreadsheets where it might get lost and/or modified incorrectly."
     },
     "Use Cases": {
       "type": "object",
-      "minLength": 20,
-      "maxLength": 500,
+      "minWords": 20,
+      "maxWords": 500,
       "pattern": "^(?!.*<iframe(\\s[^>]*)*>)[\\s\\S]*$",
       "default": "\nThe Award Details API can solve problems, such as:\n  - You are designing a service for users who need to understand if a citizen user is a benefit claimant.\n  - You are designing a service for users who need to understand if a citizen user has previously been awarded benefits.\n  - You are designing a service for users who need to understand the value of citizen user benefits awarded. These are a few examples, and there will be many more ways you might choose to use the Award Details API service."
     },
     "Data Provided": {
       "type": "string",
-      "minLength": 20,
-      "maxLength": 500,
+      "minWords": 20,
+      "maxWords": 500,
       "pattern": "^(?!.*<iframe(\\s[^>]*)*>)[\\s\\S]*$",
       "default": "\nOur API enables users to connect to a citizen’s benefit entitlement, benefits awarded, and type of benefit awarded. These may be useful to a Product Owner (or other non-technical user) separately and/or be useful keywords to search for, so you should specify these here. The user can then get the full details from the technical documentation and/or brief an engineer to consume."
     },
     "Known Issues and Limitations": {
       "type": "string",
-      "minLength": 20,
-      "maxLength": 500,
+      "minWords": 20,
+      "maxWords": 500,
       "pattern": "^(?!.*<iframe(\\s[^>]*)*>)[\\s\\S]*$",
       "default": "\nLet’s say you want addresses by a region, but the Address Lookup only includes post code. This would be useful to flag to a user upfront. Other examples would be FAQs that product teams often ask when trying to make use of the asset - this will save time troubleshooting manually."
     },
     "Useful Resources": {
       "type": "string",
-      "minLength": 20,
-      "maxLength": 500,
+      "minWords": 20,
+      "maxWords": 500,
       "pattern": "^(?!.*<iframe(\\s[^>]*)*>)[\\s\\S]*$",
       "default": "\nLinks to architecture, diagrams, packs produced on the API/event etc. Any training material you’ve created (text, video, audio)."
     },
     "Getting Started": {
       "type": "string",
-      "minLength": 20,
-      "maxLength": 500,
+      "minWords": 20,
+      "maxWords": 500,
       "pattern": "^(?!.*<iframe(\\s[^>]*)*>)[\\s\\S]*$",
       "default": "\nTo get started, please submit your PDU, your use case, your estimated monthly usage. We aim to grant access within 48 hours. Please contact INSERT if you have any questions (links to support section below)."
     },
     "Support": {
       "type": "string",
-      "minLength": 20,
-      "maxLength": 500,
+      "minWords": 20,
+      "maxWords": 500,
       "pattern": "^(?!.*<iframe(\\s[^>]*)*>)[\\s\\S]*$",
       "default": "\nIf you have any questions, please contact INSERT on EMAIL / SLACK. We can help with INSERT. If you have a general enquiry, contact INSERT instead."
     },
     "Further Info": {
       "type": "string",
-      "minLength": 20,
-      "maxLength": 500,
+      "minWords": 20,
+      "maxWords": 500,
       "pattern": "^(?!.*<iframe(\\s[^>]*)*>)[\\s\\S]*$",
       "default": "\nAdd an image to your documentation:\n![Tux, the Linux mascot](https://d33wubrfki0l68.cloudfront.net/e7ed9fe4bafe46e275c807d63591f85f9ab246ba/e2d28/assets/images/tux.png)"
     },
     "Release Notes": {
       "type": "string",
-      "minLength": 2,
-      "maxLength": 500,
+      "minWords": 2,
+      "maxWords": 500,
       "pattern": "^(?!.*<iframe(\\s[^>]*)*>)[\\s\\S]*$",
       "default": "\n- v1.1.0 - Base Version\n- v1.1.2 - has been extended to allow an additional field to be send a request"
     }
