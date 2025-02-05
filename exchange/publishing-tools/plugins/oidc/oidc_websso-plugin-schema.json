@@ -264,6 +264,14 @@
       "examples": [
         "https://proxy.example.com:3128"
       ]
+    },
+    "forward_query_args": {
+      "type": "array",
+      "description": "Extra query arguments passed from the client to the authorization endpoint.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     }
   },
   "required": [
