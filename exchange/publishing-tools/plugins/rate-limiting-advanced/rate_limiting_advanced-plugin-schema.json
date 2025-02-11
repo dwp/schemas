@@ -97,7 +97,16 @@
       "type": "object",
       "properties": {
         "host": {
-          "type": "string"
+          "type": "string",
+          "description": "Host to use for Redis connection when the redis strategy is defined. This parameter accepts a hostname or an IP address as a value."
+        },
+        "cluster_addresses": {
+          "type": "array",
+          "description": "Cluster addresses to use for Redis connections when the redis strategy is defined. Defining this value implies using Redis cluster. Each string element must consist of a hostname (or IP address) and port. The minimum length of the array is 1 element.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "port": {
           "type": "number",
