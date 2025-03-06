@@ -52,6 +52,11 @@
         "minLength": 1
       }
     },
+    "authorization_cookie_lifetime": {
+      "type": "integer",
+      "description": "Specifies authorisation cookie lifetime (in seconds).",
+      "default": 600
+    },
     "client_id": {
       "type": "string",
       "description": "Reference to the client id env var in the gateway, refer to gateway module for details",
@@ -83,6 +88,12 @@
       "required": [
         "enabled"
       ]
+    },
+    "leeway": {
+      "type": "integer",
+      "description": "Defines leeway time (in seconds) when validating: time authentication occurred (auth_time), expiration time after which the token must not be accepted (exp), time at which the JWT was issued (iat) and not before claim which specifies time before which token must not be accepted (nbf).",
+      "default": 0,
+      "maximum": 2
     },
     "logout": {
       "type": "boolean",
