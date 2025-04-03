@@ -5,60 +5,29 @@
   "title": "Rate limiting advanced plugin",
   "description": "Rate limit how many HTTP requests can be made in a given period of seconds, minutes, hours, days, months, or years. If the underlying Service/Route (or deprecated API entity) has no authentication layer, the Client IP address will be used; otherwise, the Consumer will be used if an authentication plugin has been configured.",
   "properties": {
-    "definitions": {
-      "properties": {
-        "per_second": {
-          "title": "per_second",
-          "type": "number",
-          "minimum": 1,
-          "description": "The number of HTTP requests that can be made per second"
-        },
-        "per_minute": {
-          "title": "per_minute",
-          "type": "number",
-          "minimum": 1,
-          "description": "The number of HTTP requests that can be made per minute"
-        },
-        "per_hour": {
-          "title": "per_hour",
-          "type": "number",
-          "minimum": 1,
-          "description": "The number of HTTP requests that can be made per hour"
-        },
-        "per_day": {
-          "title": "per_day",
-          "type": "number",
-          "minimum": 1,
-          "description": "The number of HTTP requests that can be made per day"
-        }
-      },
-      "anyOf": [
-        {
-          "required": [
-            "per_second"
-          ]
-        },
-        {
-          "required": [
-            "per_minute"
-          ]
-        },
-        {
-          "required": [
-            "per_hour"
-          ]
-        },
-        {
-          "required": [
-            "per_day"
-          ]
-        },
-        {
-          "required": [
-            "per_consumer"
-          ]
-        }
-      ]
+    "per_second": {
+      "title": "per_second",
+      "type": "number",
+      "minimum": 1,
+      "description": "The number of HTTP requests that can be made per second"
+    },
+    "per_minute": {
+      "title": "per_minute",
+      "type": "number",
+      "minimum": 1,
+      "description": "The number of HTTP requests that can be made per minute"
+    },
+    "per_hour": {
+      "title": "per_hour",
+      "type": "number",
+      "minimum": 1,
+      "description": "The number of HTTP requests that can be made per hour"
+    },
+    "per_day": {
+      "title": "per_day",
+      "type": "number",
+      "minimum": 1,
+      "description": "The number of HTTP requests that can be made per day"
     },
     "per_consumer": {
       "title": "per_consumer",
@@ -66,12 +35,6 @@
       "type": "array",
       "items": {
         "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/properties/definitions",
-            "additionalProperties": false
-          }
-        ],
         "properties": {
           "id": {
             "description": "The ID of your consumer",
@@ -81,10 +44,57 @@
               "b.service.gov.uk",
               "c.service.gov.uk"
             ]
+          },
+          "per_second": {
+            "title": "per_second",
+            "type": "number",
+            "minimum": 1,
+            "description": "The number of HTTP requests that can be made per second"
+          },
+          "per_minute": {
+            "title": "per_minute",
+            "type": "number",
+            "minimum": 1,
+            "description": "The number of HTTP requests that can be made per minute"
+          },
+          "per_hour": {
+            "title": "per_hour",
+            "type": "number",
+            "minimum": 1,
+            "description": "The number of HTTP requests that can be made per hour"
+          },
+          "per_day": {
+            "title": "per_day",
+            "type": "number",
+            "minimum": 1,
+            "description": "The number of HTTP requests that can be made per day"
           }
         },
         "required": [
           "id"
+        ],
+        "additionalProperties": false,
+        "anyOf": [
+          {
+            "required": [
+              "per_second"
+            ]
+          },
+          {
+            "required": [
+              "per_minute"
+            ]
+          },
+          {
+            "required": [
+              "per_hour"
+            ]
+          },
+          {
+            "required": [
+              "per_day"
+            ]
+          }
         ]
       }
     },
@@ -151,13 +161,34 @@
         }
       },
       "additionalProperties": false
-    },
-    "additionalProperties": false
+    }
   },
-  "allOf": [
+  "additionalProperties": false,
+  "anyOf": [
     {
-      "$ref": "#/properties/definitions"
-
+      "required": [
+        "per_second"
+      ]
+    },
+    {
+      "required": [
+        "per_minute"
+      ]
+    },
+    {
+      "required": [
+        "per_hour"
+      ]
+    },
+    {
+      "required": [
+        "per_day"
+      ]
+    },
+    {
+      "required": [
+        "per_consumer"
+      ]
     }
   ]
 }
