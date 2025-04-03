@@ -58,8 +58,7 @@
             "per_consumer"
           ]
         }
-      ],
-      "additionalProperties": false
+      ]
     },
     "per_consumer": {
       "title": "per_consumer",
