@@ -14,7 +14,9 @@
         "azure-ad",
         "kbv-tactical-dev",
         "kbv-tactical-test",
-        "kbv-tactical-nft"
+        "kbv-tactical-nft",
+        "kbv-tactical-stage",
+        "kbv-tactical-prod"
       ]
     },
     "use_internet": {
