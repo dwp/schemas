@@ -82,8 +82,12 @@
         "access"
       ],
       "allOf": [
-        {"$ref": "#/properties/filters/definitions/active-lifecycle"},
-        {"$ref": "#/properties/filters/definitions/deprecated-lifecycle"}
+        {
+          "$ref": "#/properties/filters/definitions/active-lifecycle"
+        },
+        {
+          "$ref": "#/properties/filters/definitions/deprecated-lifecycle"
+        }
       ],
       "definitions": {
         "active-lifecycle": {

@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://dwp.gov.uk/exchange/publishing-tools/plugin-adapter/plugin-adapter-schema.json",
+  "type": "object",
+  "title": "Plugin Adapter",
+  "patternProperties": {
+    "^[a-z_\\-]+$": {
+      "type": "object",
+      "properties": {
+        "rename": {
+          "type": "object",
+          "properties": {}
+        },
+        "remove": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

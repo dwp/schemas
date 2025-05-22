@@ -7,10 +7,9 @@
     "services": {
       "title": "Services",
       "type": "array",
-      "items":
-        {
+      "items": {
         "$ref": "service-schema.json"
-        }
+      }
     }
   },
   "additionalProperties": false,

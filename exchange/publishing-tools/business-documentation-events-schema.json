@@ -47,6 +47,8 @@
       "description": "The support section of the Markdown file."
     }
   },
-  "required": ["Overview"],
+  "required": [
+    "Overview"
+  ],
   "additionalProperties": false
 }

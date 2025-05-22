@@ -60,10 +60,9 @@
     "routes": {
       "title": "Routes",
       "type": "array",
-      "items":
-        {
-          "$ref": "route-schema.json"
-        }
+      "items": {
+        "$ref": "route-schema.json"
+      }
     },
     "plugins": {
       "title": "Plugins",
