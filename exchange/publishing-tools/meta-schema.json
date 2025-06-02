@@ -43,6 +43,8 @@
     "workspace_gitlab_groups": {
       "$id": "#root/workspace_gitlab_groups",
       "title": "GitLab groups for workspace",
+      "description": "This field is deprecated and will be removed in a future version",
+      "x-deprecated": true,
       "type": "array",
       "items": {
         "type": "string",
