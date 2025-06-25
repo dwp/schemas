@@ -30,10 +30,12 @@
         "nhs-int",
         "nhs-live",
         "keycloak-local",
+        "keycloak-local-rp-logout",
         "ame-payments-dev",
         "ame-payments-test",
         "ame-payments-prestag",
-        "ame-payments-perf"
+        "ame-payments-perf",
+        "dam-dev"
       ]
     },
     "additional_scopes": {
@@ -284,6 +286,14 @@
         "type": "string",
         "minLength": 1
       }
+    },
+    "ui_locales": {
+      "title": "UI Locales",
+      "type": "string",
+      "description": "ui_locales URL query-parameter value(s) to pass to the logout endpoint",
+      "examples": [
+        "fr FR; en GB"
+      ]
     }
   },
   "required": [
