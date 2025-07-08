@@ -108,6 +108,12 @@
       "pattern": "^(http|https)://[^ \"]+$",
       "description": "Where to redirect the client on logout"
     },
+    "post_logout_redirect_uri": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(http|https)://[^ \"]+$",
+      "description": "Where to redirect the client on logout (for RP Initiated Logout)"
+    },
     "logout_revoke": {
       "type": "boolean",
       "description": "If true, the plugin will attempt to revoke the token before redirecting to the IDP's logout URI",
