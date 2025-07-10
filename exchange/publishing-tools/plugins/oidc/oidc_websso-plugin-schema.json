@@ -54,6 +54,10 @@
         "minLength": 1
       }
     },
+    "authorization_cookie_name": {
+      "type": "string",
+      "description": "Specifies authorisation cookie name. This is necessary when same instance of Kong is used to protect multiple upstream services with different client ids."
+    },
     "authorization_cookie_lifetime": {
       "type": "integer",
       "description": "Specifies authorisation cookie lifetime (in seconds).",
