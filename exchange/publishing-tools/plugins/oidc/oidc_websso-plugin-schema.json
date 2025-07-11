@@ -35,6 +35,8 @@
         "ame-payments-test",
         "ame-payments-prestag",
         "ame-payments-perf",
+        "syf-cognito-dev",
+        "syf-cognito-test",
         "dam-dev"
       ]
     },

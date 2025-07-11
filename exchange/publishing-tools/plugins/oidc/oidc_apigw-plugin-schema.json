@@ -11,8 +11,6 @@
         "cognito-non-prod",
         "cognito-staging",
         "cognito-prod",
-        "syf-cognito-dev",
-        "syf-cognito-test",
         "azure-ad",
         "kbv-tactical-dev",
         "kbv-tactical-test",
