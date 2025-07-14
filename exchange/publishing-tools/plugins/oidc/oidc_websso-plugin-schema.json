@@ -40,6 +40,11 @@
         "dam-dev"
       ]
     },
+    "use_internet": {
+      "type": "boolean",
+      "description": "Determines whether the JWKS endpoints for your IDP will be internet facing",
+      "default": false
+    },
     "additional_scopes": {
       "type": "array",
       "description": "Additional scopes to request from the authorization endpoint",
