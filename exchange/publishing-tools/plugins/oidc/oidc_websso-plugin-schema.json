@@ -25,6 +25,8 @@
         "dth2-dev-onelogin",
         "dth2-test-onelogin",
         "idt-dev-ol-sradam",
+        "idt-test-ol-sradam",
+        "idt-stage-ol-sradam",
         "nhs-dev-simple",
         "nhs-dev",
         "nhs-int",
